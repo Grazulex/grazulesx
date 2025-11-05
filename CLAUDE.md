@@ -19,6 +19,11 @@ grazulex/
 ├── index.html      # Single-page application with all content
 ├── styles.css      # All styles including dark/light mode
 ├── script.js       # Dark mode toggle & interactions
+├── favicon.svg     # Site favicon (letter G in Laravel red)
+├── og-image.png    # Social media preview image (1200x630px)
+├── sitemap.xml     # SEO sitemap for search engines
+├── robots.txt      # Crawler directives
+├── CLAUDE.md       # This file
 └── README.md       # Deployment & maintenance instructions
 ```
 
@@ -39,11 +44,21 @@ grazulex/
 
 ### JavaScript Features
 
-- Dark/light mode toggle with `localStorage` persistence
-- System theme preference detection
-- Smooth scroll for anchor links
-- Fade-in animations on scroll (IntersectionObserver)
-- Keyboard shortcuts (Ctrl/Cmd + D for theme toggle)
+- **Theme System:**
+  - Dark/light mode toggle with `localStorage` persistence
+  - System theme preference detection (`prefers-color-scheme`)
+  - Keyboard shortcut: Ctrl/Cmd + D to toggle theme
+- **Animations & Interactions:**
+  - Fade-in animations on scroll using IntersectionObserver for `.package-card`, `.service-card`, `.timeline-item`, `.contact-item`
+  - Smooth scroll for anchor links
+  - Hero section parallax effect on scroll
+  - Stat cards scale animation on hover
+  - Theme toggle button rotation animation
+- **Utility Features:**
+  - Email copy-to-clipboard functionality on mailto links
+  - Konami code easter egg (↑↑↓↓←→←→BA triggers rainbow animation)
+  - Lazy loading support for images (prepared for future use)
+  - Developer-friendly console messages
 
 ## Content Updates
 
@@ -78,14 +93,24 @@ Timeline items are in lines 300-320. Each `.timeline-item` has:
 - Job title
 - Company and description
 
-## Deployment Commands
+## Local Testing
 
-**Test locally:**
+**Simple method (recommended):**
+- Just open `index.html` directly in your browser
+- Double-click the file or use File > Open in your browser
+- Works perfectly for all features since it's 100% static
+
+**Optional local server (for production simulation):**
 ```bash
 python3 -m http.server 8000
 # or
 php -S localhost:8000
+# or
+npx http-server
 ```
+*Only needed for testing with Lighthouse, simulating HTTPS, or other production-like scenarios.*
+
+## Deployment Commands
 
 **Deploy to Netlify:**
 ```bash
@@ -130,10 +155,84 @@ Site should maintain:
 
 ### SEO Tasks
 
-- Submit sitemap to Google Search Console
+- Submit sitemap to Google Search Console (`https://grazulex.be/sitemap.xml`)
 - Update meta descriptions if needed
 - Monitor backlinks from GitHub packages
 - Verify Open Graph tags work on social media
+- Update `lastmod` dates in `sitemap.xml` when content changes
+- Test structured data with Google Rich Results Test
+
+## SEO Implementation
+
+### Meta Tags (in `index.html`)
+
+The site includes comprehensive SEO meta tags:
+
+**Essential SEO:**
+- Title, description, keywords, author
+- Canonical URL to prevent duplicate content
+- Robots directive (index, follow)
+- Theme color for mobile browsers
+
+**Open Graph (Facebook/LinkedIn):**
+- og:title, og:description, og:type, og:url
+- og:image (1200x630px PNG)
+- og:locale (fr_BE)
+
+**Twitter Card:**
+- Large image card format
+- Title, description, image
+- Creator handle (@Grazulex)
+
+**Structured Data (JSON-LD):**
+- Schema.org Person markup
+- Includes name, job title, location, languages
+- Links to GitHub and LinkedIn profiles
+- Email and skills information
+
+### Files Created
+
+**`sitemap.xml`** - Lists all pages/sections:
+- Homepage (priority 1.0)
+- Packages section (priority 0.8)
+- Services section (priority 0.8)
+- About section (priority 0.6)
+- Contact section (priority 0.7)
+
+**`robots.txt`** - Crawler directives:
+- Allows all crawlers
+- Points to sitemap
+- Sets crawl-delay to 1 second
+
+**`favicon.svg`** - Site icon:
+- Letter "G" in Laravel red (#FF2D20)
+- Dark background (#0d1117)
+- SVG format for scalability
+
+**`og-image.png`** - Social media preview image (1200x630px):
+- Used for Open Graph and Twitter Card
+- Displays when site is shared on social media
+- Features branding and key stats
+
+### Testing SEO
+
+**Validation tools:**
+```bash
+# HTML validation
+open https://validator.w3.org/nu/?doc=https://grazulex.be
+
+# Open Graph preview (Facebook)
+open https://developers.facebook.com/tools/debug/?q=https://grazulex.be
+
+# Twitter Card validator
+open https://cards-dev.twitter.com/validator
+
+# Rich Results Test (Google)
+open https://search.google.com/test/rich-results?url=https://grazulex.be
+
+# Google Search Console
+open https://search.google.com/search-console
+```
 
 ## Color Scheme
 

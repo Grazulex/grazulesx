@@ -780,3 +780,9 @@ html {
     background-color: var(--accent);
     color: white;
 }
+
+/* Easter egg: Konami code rainbow animation */
+@keyframes rainbow {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
