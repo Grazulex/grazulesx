@@ -69,7 +69,13 @@
     <!-- Header with theme toggle -->
     <header>
         <div class="container">
-            <div class="logo">grazulex</div>
+            <a href="index.html" class="logo">grazulex</a>
+            <nav class="main-nav">
+                <a href="backmark.html" class="nav-link">BackMark</a>
+                <a href="reposentinel.html" class="nav-link">RepoSentinel</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
                 <span class="sun-icon">☀️</span>
                 <span class="moon-icon">🌙</span>
@@ -191,6 +197,193 @@
                 <a href="https://github.com/Grazulex?tab=repositories" target="_blank" rel="noopener" class="btn btn-secondary">
                     Voir tous mes packages sur GitHub
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BackMark Featured Project -->
+    <section id="backmark-featured" class="backmark-featured">
+        <div class="container">
+            <div class="featured-badge">
+                <span class="badge-icon">🚀</span>
+                <span>Projet Phare</span>
+            </div>
+
+            <div class="backmark-content">
+                <div class="backmark-text">
+                    <h2>BackMark</h2>
+                    <p class="backmark-tagline">Le gestionnaire de tâches conçu pour le "vibe coding"</p>
+                    <p class="backmark-description">
+                        Collaboration transparente entre développeurs et assistants IA. BackMark transforme de simples fichiers Markdown
+                        en un système puissant de gestion de tâches, 100% offline, sans verrouillage.
+                    </p>
+
+                    <div class="backmark-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🤖</span>
+                            <div>
+                                <strong>Design centré sur l'IA</strong>
+                                <p>4 espaces dédiés aux assistants IA</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">📝</span>
+                            <div>
+                                <strong>Zero Lock-in</strong>
+                                <p>100% Markdown + YAML</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">⚡</span>
+                            <div>
+                                <strong>Ultra-rapide</strong>
+                                <p>50-250x plus rapide que la concurrence</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🔒</span>
+                            <div>
+                                <strong>Confidentialité totale</strong>
+                                <p>100% offline, zéro télémétrie</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="backmark-ctas">
+                        <a href="backmark.html" class="btn btn-primary">Découvrir BackMark →</a>
+                        <a href="https://github.com/Grazulex/backmark" target="_blank" rel="noopener" class="btn btn-secondary">
+                            Voir sur GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="backmark-visual">
+                    <div class="cli-window">
+                        <div class="cli-header">
+                            <span class="cli-dot red"></span>
+                            <span class="cli-dot yellow"></span>
+                            <span class="cli-dot green"></span>
+                            <span class="cli-title">backmark@1.0.0</span>
+                        </div>
+                        <div class="cli-body">
+                            <pre><code><span class="cli-prompt">$</span> backmark list
+
+<span class="cli-section">📋 To Do (3)</span>
+<span class="cli-task">→ #42</span> Implement AI planning assistant
+<span class="cli-task">→ #43</span> Add Markdown export feature
+<span class="cli-task">→ #44</span> Optimize LokiJS indexing
+
+<span class="cli-section">🔄 In Progress (1)</span>
+<span class="cli-task-active">▶ #41</span> Review code with AI assistant
+
+<span class="cli-section">✅ Done (12)</span>
+
+<span class="cli-stats">Performance: <span class="cli-highlight">Query time: 8ms</span> | 1000+ tasks indexed</span></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RepoSentinel Featured Project -->
+    <section id="reposentinel-featured" class="reposentinel-featured">
+        <div class="container">
+            <div class="featured-badge reposentinel-badge">
+                <span class="badge-icon">🛡️</span>
+                <span>Projet Phare</span>
+            </div>
+
+            <div class="reposentinel-content">
+                <div class="reposentinel-visual">
+                    <div class="dashboard-mockup">
+                        <div class="dashboard-header">
+                            <div class="dashboard-dots">
+                                <span class="dash-dot red"></span>
+                                <span class="dash-dot yellow"></span>
+                                <span class="dash-dot green"></span>
+                            </div>
+                            <span class="dashboard-title">RepoSentinel Dashboard</span>
+                        </div>
+                        <div class="dashboard-body">
+                            <div class="dashboard-stat critical">
+                                <span class="stat-icon-large">🔴</span>
+                                <div class="stat-info">
+                                    <strong>3 Critical</strong>
+                                    <span>Vulnerabilities detected</span>
+                                </div>
+                            </div>
+                            <div class="dashboard-stat warning">
+                                <span class="stat-icon-large">🟡</span>
+                                <div class="stat-info">
+                                    <strong>12 Updates</strong>
+                                    <span>Dependencies available</span>
+                                </div>
+                            </div>
+                            <div class="dashboard-stat success">
+                                <span class="stat-icon-large">🟢</span>
+                                <div class="stat-info">
+                                    <strong>47 Repos</strong>
+                                    <span>Monitored & secured</span>
+                                </div>
+                            </div>
+                            <div class="dashboard-licenses">
+                                <div class="license-title">License Compliance</div>
+                                <div class="license-bar">
+                                    <div class="license-fill"></div>
+                                </div>
+                                <span class="license-status">✓ 100% compliant</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reposentinel-text">
+                    <h2>RepoSentinel</h2>
+                    <p class="reposentinel-tagline">Sécurité GitHub de classe entreprise</p>
+                    <p class="reposentinel-description">
+                        Plateforme SaaS qui automatise la surveillance de sécurité, la détection de vulnérabilités et la conformité
+                        des licences pour vos repositories GitHub. Protection en temps réel sans stocker votre code.
+                    </p>
+
+                    <div class="reposentinel-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🔍</span>
+                            <div>
+                                <strong>Détection temps réel</strong>
+                                <p>Alertes instantanées de vulnérabilités</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">📜</span>
+                            <div>
+                                <strong>Conformité licences</strong>
+                                <p>200+ licences scannées automatiquement</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">📦</span>
+                            <div>
+                                <strong>Gestion dépendances</strong>
+                                <p>Suivi et recommandations de mises à jour</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🏢</span>
+                            <div>
+                                <strong>Grade entreprise</strong>
+                                <p>Multi-équipe avec intégration Slack</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reposentinel-ctas">
+                        <a href="reposentinel.html" class="btn btn-primary">Découvrir RepoSentinel →</a>
+                        <a href="https://reposentinel.com" target="_blank" rel="noopener" class="btn btn-secondary">
+                            Visiter le site
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

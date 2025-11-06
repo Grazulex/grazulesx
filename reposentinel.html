@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RepoSentinel - Plateforme de sécurité GitHub de classe entreprise. Détection de vulnérabilités, conformité des licences, gestion des dépendances en temps réel.">
+    <meta name="keywords" content="RepoSentinel, GitHub Security, Repository Security, Vulnerability Detection, License Compliance, Dependency Management">
+    <meta name="author" content="Jean-Marc Strauven">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="RepoSentinel - Sécurité GitHub de Classe Entreprise">
+    <meta property="og:description" content="Surveillance temps réel, détection de vulnérabilités, conformité licences. Protection complète pour vos repositories GitHub.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grazulex.be/reposentinel">
+    <meta property="og:image" content="https://grazulex.be/og-image.png">
+    <meta property="og:locale" content="fr_BE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RepoSentinel - Sécurité GitHub de Classe Entreprise">
+    <meta name="twitter:description" content="Surveillance temps réel, détection de vulnérabilités, conformité licences">
+    <meta name="twitter:image" content="https://grazulex.be/og-image.png">
+    <meta name="twitter:creator" content="@Grazulex">
+
+    <!-- SEO -->
+    <link rel="canonical" href="https://grazulex.be/reposentinel">
+    <meta name="theme-color" content="#7C3AED">
+    <meta name="robots" content="index, follow">
+
+    <title>RepoSentinel - Sécurité GitHub de Classe Entreprise | Jean-Marc Strauven</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "RepoSentinel",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "EUR",
+            "lowPrice": "0",
+            "highPrice": "99.99"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Jean-Marc Strauven",
+            "url": "https://grazulex.be"
+        },
+        "description": "Plateforme de sécurité GitHub de classe entreprise. Détection de vulnérabilités, conformité des licences, gestion des dépendances.",
+        "url": "https://reposentinel.com"
+    }
+    </script>
+</head>
+<body class="dark-mode reposentinel-page">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">grazulex</a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Portfolio</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="backmark.html" class="nav-link">BackMark</a>
+                <a href="https://reposentinel.com" target="_blank" rel="noopener" class="btn btn-primary-small">Aller sur reposentinel.com →</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="reposentinel-hero">
+        <div class="container">
+            <div class="reposentinel-hero-content">
+                <div class="hero-badge">
+                    <span>🛡️ Plateforme SaaS</span>
+                </div>
+                <h1>RepoSentinel</h1>
+                <p class="hero-tagline">Sécurité GitHub de <strong>classe entreprise</strong></p>
+                <p class="hero-description">
+                    Surveillez, sécurisez et conformez vos repositories GitHub avec une plateforme tout-en-un.
+                    Détection temps réel des vulnérabilités, gestion des dépendances et conformité automatisée des licences.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="https://reposentinel.com" target="_blank" rel="noopener" class="btn btn-primary">
+                        Visiter RepoSentinel.com →
+                    </a>
+                    <a href="https://github.com/Grazulex" target="_blank" rel="noopener" class="btn btn-secondary">
+                        Voir mes projets
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">🔍</span>
+                        <div>
+                            <strong>Temps réel</strong>
+                            <span>Détection vulnérabilités</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">📜</span>
+                        <div>
+                            <strong>200+</strong>
+                            <span>Licences scannées</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🔒</span>
+                        <div>
+                            <strong>Sécurisé</strong>
+                            <span>Code non stocké</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">⚡</span>
+                        <div>
+                            <strong>Automatisé</strong>
+                            <span>Alertes Slack</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Demo -->
+            <div class="dashboard-demo-large">
+                <div class="dashboard-mockup">
+                    <div class="dashboard-header">
+                        <div class="dashboard-dots">
+                            <span class="dash-dot red"></span>
+                            <span class="dash-dot yellow"></span>
+                            <span class="dash-dot green"></span>
+                        </div>
+                        <span class="dashboard-title">RepoSentinel - Security Overview</span>
+                    </div>
+                    <div class="dashboard-body-large">
+                        <div class="dashboard-section">
+                            <h3>🚨 Alertes de Sécurité</h3>
+                            <div class="alert-item critical">
+                                <span class="alert-severity">CRITICAL</span>
+                                <div class="alert-info">
+                                    <strong>SQL Injection vulnerability in Laravel package</strong>
+                                    <span>laravel/framework@8.x - CVE-2024-12345</span>
+                                </div>
+                                <span class="alert-time">2 min ago</span>
+                            </div>
+                            <div class="alert-item high">
+                                <span class="alert-severity">HIGH</span>
+                                <div class="alert-info">
+                                    <strong>Outdated dependency with known exploits</strong>
+                                    <span>symfony/http-kernel@5.4.x</span>
+                                </div>
+                                <span class="alert-time">1 hour ago</span>
+                            </div>
+                            <div class="alert-item medium">
+                                <span class="alert-severity">MEDIUM</span>
+                                <div class="alert-info">
+                                    <strong>License incompatibility detected</strong>
+                                    <span>GPL-3.0 conflicts with MIT in repository</span>
+                                </div>
+                                <span class="alert-time">3 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="dashboard-stats-grid">
+                            <div class="dash-stat">
+                                <span class="dash-stat-number critical-color">3</span>
+                                <span class="dash-stat-label">Critical</span>
+                            </div>
+                            <div class="dash-stat">
+                                <span class="dash-stat-number warning-color">12</span>
+                                <span class="dash-stat-label">Updates</span>
+                            </div>
+                            <div class="dash-stat">
+                                <span class="dash-stat-number success-color">47</span>
+                                <span class="dash-stat-label">Repos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pourquoi RepoSentinel ?</h2>
+                <p class="section-subtitle">La sécurité GitHub ne peut plus être une réflexion après-coup</p>
+            </div>
+
+            <div class="ps-grid">
+                <div class="problem-box">
+                    <h3>❌ Les risques</h3>
+                    <ul class="problem-list">
+                        <li>Vulnérabilités critiques découvertes trop tard dans vos dépendances</li>
+                        <li>Violations de licences qui exposent à des risques légaux</li>
+                        <li>Manque de visibilité sur l'état de sécurité global</li>
+                        <li>Processus manuels chronophages et sujets aux erreurs</li>
+                        <li>Difficulté à maintenir la conformité à l'échelle</li>
+                    </ul>
+                </div>
+
+                <div class="solution-box">
+                    <h3>✅ La solution RepoSentinel</h3>
+                    <ul class="solution-list">
+                        <li><strong>Détection automatisée</strong> - Surveillance 24/7 de toutes vos repositories</li>
+                        <li><strong>Conformité garantie</strong> - Scan de 200+ licences avec analyse de compatibilité</li>
+                        <li><strong>Dashboard centralisé</strong> - Vue d'ensemble temps réel de votre sécurité</li>
+                        <li><strong>Alertes intelligentes</strong> - Notifications Slack/email prioritisées par criticité</li>
+                        <li><strong>Gestion à l'échelle</strong> - Multi-équipe avec contrôle d'accès granulaire</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-detailed">
+        <div class="container">
+            <h2>Fonctionnalités</h2>
+            <p class="section-subtitle">Tout ce dont votre équipe a besoin pour sécuriser son code</p>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Détection de vulnérabilités</h3>
+                    <p>Surveillance continue et automatisée de toutes vos dépendances avec base de données CVE mise à jour quotidiennement :</p>
+                    <ul class="feature-list">
+                        <li>Scan automatique de chaque commit et pull request</li>
+                        <li>Alertes temps réel classées par criticité (Critical, High, Medium, Low)</li>
+                        <li>Recommandations de patches avec guides de migration</li>
+                        <li>Intégration GitHub Actions pour bloquer les merges à risque</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">📜</div>
+                    <h3>Conformité des licences</h3>
+                    <p>Automatisez votre conformité légale avec un scanning exhaustif des licences open-source :</p>
+                    <ul class="feature-list">
+                        <li>Reconnaissance de <strong>200+ licences</strong> (MIT, GPL, Apache, etc.)</li>
+                        <li>Analyse de compatibilité croisée entre dépendances</li>
+                        <li>Génération de rapports d'audit prêts pour les audits légaux</li>
+                        <li>Détection automatique des conflits de licences</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Gestion des dépendances</h3>
+                    <p>Gardez vos projets à jour avec une gestion intelligente des packages :</p>
+                    <ul class="feature-list">
+                        <li>Suivi automatique des nouvelles versions disponibles</li>
+                        <li>Évaluation du risque de chaque mise à jour (breaking changes, etc.)</li>
+                        <li>Création automatique de PRs pour les mises à jour de sécurité</li>
+                        <li>Roadmap de migration avec estimations de complexité</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Rapports & Analytics</h3>
+                    <p>Insights détaillés pour piloter votre stratégie de sécurité :</p>
+                    <ul class="feature-list">
+                        <li>Dashboard en temps réel avec métriques clés</li>
+                        <li>Rapports mensuels d'évolution de la sécurité</li>
+                        <li>Exports CSV/JSON pour intégration BI</li>
+                        <li>Historique complet de toutes les alertes et résolutions</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <h3>Grade entreprise</h3>
+                    <p>Conçu pour les équipes professionnelles exigeantes :</p>
+                    <ul class="feature-list">
+                        <li><strong>Multi-équipe</strong> avec contrôle d'accès granulaire (RBAC)</li>
+                        <li>Intégration Slack pour alertes en temps réel</li>
+                        <li>SSO et authentification 2FA</li>
+                        <li>SLA 99.9% avec support prioritaire</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Sécurité & confidentialité</h3>
+                    <p>Votre code reste privé. RepoSentinel n'accède qu'aux métadonnées :</p>
+                    <ul class="feature-list">
+                        <li><strong>Accès lecture seule</strong> via OAuth GitHub</li>
+                        <li>Aucun stockage de code source sur nos serveurs</li>
+                        <li>Chiffrement AES-256 de toutes les données</li>
+                        <li>Conformité RGPD et hébergement EU</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2>Tarifs</h2>
+            <p class="section-subtitle">Des plans adaptés à toutes les tailles d'équipe</p>
+
+            <div class="pricing-grid">
+                <!-- Free Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Free</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount">0€</span>
+                            <span class="price-period">/mois</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ 5 repositories publics</li>
+                        <li>✓ Détection de vulnérabilités basique</li>
+                        <li>✓ Scan de licences</li>
+                        <li>✓ Rapports mensuels</li>
+                        <li>✗ Support prioritaire</li>
+                        <li>✗ Intégration Slack</li>
+                    </ul>
+                    <a href="https://reposentinel.com" target="_blank" rel="noopener" class="btn btn-secondary">
+                        Découvrir
+                    </a>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Populaire</div>
+                    <div class="pricing-header">
+                        <h3>Pro</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount">49€</span>
+                            <span class="price-period">/mois</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ 25 repositories (publics & privés)</li>
+                        <li>✓ Détection avancée + CVE database</li>
+                        <li>✓ Scan 200+ licences</li>
+                        <li>✓ Rapports hebdomadaires</li>
+                        <li>✓ Intégration Slack</li>
+                        <li>✓ Support email prioritaire</li>
+                    </ul>
+                    <a href="https://reposentinel.com" target="_blank" rel="noopener" class="btn btn-primary">
+                        En savoir plus
+                    </a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount">99€</span>
+                            <span class="price-period">/mois</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Repositories illimités</li>
+                        <li>✓ Toutes les fonctionnalités Pro</li>
+                        <li>✓ Multi-équipe avec RBAC</li>
+                        <li>✓ SSO & 2FA</li>
+                        <li>✓ SLA 99.9%</li>
+                        <li>✓ Support téléphonique dédié</li>
+                    </ul>
+                    <a href="mailto:info@reposentinel.com" class="btn btn-secondary">
+                        Nous contacter
+                    </a>
+                </div>
+            </div>
+
+            <div class="pricing-note">
+                <p>🎉 <strong>Promotion actuelle :</strong> -50% sur tous les plans jusqu'au 23 novembre 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box-large">
+                <h2>Sécurisez vos repositories aujourd'hui</h2>
+                <p>Rejoignez les équipes qui font confiance à RepoSentinel pour protéger leur code</p>
+                <div class="cta-buttons">
+                    <a href="https://reposentinel.com" target="_blank" rel="noopener" class="btn btn-primary-large">
+                        Visiter reposentinel.com →
+                    </a>
+                    <a href="mailto:info@reposentinel.com" class="btn btn-secondary-large">
+                        <span class="btn-icon">✉️</span> Nous contacter
+                    </a>
+                </div>
+                <p class="cta-note">Pour toute question : info@reposentinel.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Creator Section -->
+    <section class="creator-section">
+        <div class="container">
+            <div class="creator-content">
+                <div class="creator-text">
+                    <h3>À propos du créateur</h3>
+                    <p>
+                        RepoSentinel est développé par <strong>Jean-Marc Strauven</strong>, Expert Laravel avec 15+ ans d'expérience
+                        en sécurité applicative et architecture logicielle.
+                    </p>
+                    <p>
+                        Fort de son expérience comme CTO et Chapter Lead dans des environnements hautement sécurisés (BNP Paribas Fortis),
+                        Jean-Marc a créé RepoSentinel pour répondre au besoin critique de surveillance automatisée de la sécurité GitHub.
+                    </p>
+                    <div class="creator-links">
+                        <a href="index.html" class="btn btn-secondary">Voir mon portfolio</a>
+                        <a href="index.html#services" class="btn btn-secondary">Mes services</a>
+                    </div>
+                </div>
+                <div class="creator-stats">
+                    <div class="creator-stat">
+                        <span class="stat-icon">🛡️</span>
+                        <strong>RepoSentinel</strong>
+                        <span>Plateforme SaaS</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">📦</span>
+                        <strong>17+ packages</strong>
+                        <span>Open source</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">⭐</span>
+                        <strong>100+</strong>
+                        <span>GitHub Stars</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">💼</span>
+                        <strong>15+ ans</strong>
+                        <span>Expérience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>RepoSentinel</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://reposentinel.com" target="_blank" rel="noopener">Site officiel</a></li>
+                        <li><a href="mailto:info@reposentinel.com">info@reposentinel.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Portfolio</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#packages">Packages Laravel</a></li>
+                        <li><a href="index.html#services">Services & Consulting</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Autres Projets</h4>
+                    <ul class="footer-links">
+                        <li><a href="backmark.html">BackMark</a></li>
+                        <li><a href="index.html#packages">Tous mes packages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:jms@grazulex.be">jms@grazulex.be</a></li>
+                        <li><a href="https://github.com/Grazulex" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/jean-marc-strauven/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jean-Marc Strauven • RepoSentinel</p>
+                <p class="footer-tagline">Securing GitHub repositories, one commit at a time</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

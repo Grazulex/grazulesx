@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BackMark - Gestionnaire de tâches CLI pour le vibe coding. Collaboration développeur-IA, 100% Markdown, zéro lock-in, ultra-rapide.">
+    <meta name="keywords" content="BackMark, Task Manager, CLI, AI Coding, Vibe Coding, Markdown, Developer Tools, Productivity">
+    <meta name="author" content="Jean-Marc Strauven">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="BackMark - Task Manager pour le Vibe Coding">
+    <meta property="og:description" content="Gestionnaire de tâches CLI conçu pour la collaboration développeur-IA. 100% Markdown, offline, ultra-rapide.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grazulex.be/backmark">
+    <meta property="og:image" content="https://grazulex.be/og-image.png">
+    <meta property="og:locale" content="fr_BE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BackMark - Task Manager pour le Vibe Coding">
+    <meta name="twitter:description" content="Gestionnaire de tâches CLI conçu pour la collaboration développeur-IA">
+    <meta name="twitter:image" content="https://grazulex.be/og-image.png">
+    <meta name="twitter:creator" content="@Grazulex">
+
+    <!-- SEO -->
+    <link rel="canonical" href="https://grazulex.be/backmark">
+    <meta name="theme-color" content="#00D4AA">
+    <meta name="robots" content="index, follow">
+
+    <title>BackMark - Task Manager pour le Vibe Coding | Jean-Marc Strauven</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "BackMark",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Linux, macOS, Windows",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Jean-Marc Strauven",
+            "url": "https://grazulex.be"
+        },
+        "description": "Gestionnaire de tâches CLI pour le vibe coding. Collaboration développeur-IA, 100% Markdown, zéro lock-in.",
+        "screenshot": "https://backmark.tech/screenshot.png",
+        "softwareVersion": "1.0.0",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "ratingCount": "1"
+        }
+    }
+    </script>
+</head>
+<body class="dark-mode backmark-page">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">grazulex</a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Portfolio</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="reposentinel.html" class="nav-link">RepoSentinel</a>
+                <a href="https://backmark.tech" target="_blank" rel="noopener" class="btn btn-primary-small">Aller sur backmark.tech →</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="backmark-hero">
+        <div class="container">
+            <div class="backmark-hero-content">
+                <div class="hero-badge">
+                    <span>🚀 Open Source</span>
+                </div>
+                <h1>BackMark</h1>
+                <p class="hero-tagline">Le gestionnaire de tâches conçu pour le <strong>vibe coding</strong></p>
+                <p class="hero-description">
+                    Collaboration transparente entre développeurs et assistants IA. Transformez de simples fichiers Markdown
+                    en un système puissant de gestion de tâches. 100% offline, zéro lock-in, ultra-rapide.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="https://backmark.tech" target="_blank" rel="noopener" class="btn btn-primary">
+                        Découvrir sur backmark.tech →
+                    </a>
+                    <a href="https://github.com/Grazulex/backmark" target="_blank" rel="noopener" class="btn btn-secondary">
+                        <span class="btn-icon">🐙</span> Voir sur GitHub
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">⚡</span>
+                        <div>
+                            <strong>50-250x</strong>
+                            <span>plus rapide</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">📝</span>
+                        <div>
+                            <strong>100%</strong>
+                            <span>Markdown</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🔒</span>
+                        <div>
+                            <strong>Offline</strong>
+                            <span>Zero télémétrie</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🤖</span>
+                        <div>
+                            <strong>AI-First</strong>
+                            <span>4 AI spaces</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CLI Demo Window -->
+            <div class="cli-demo-large">
+                <div class="cli-window">
+                    <div class="cli-header">
+                        <span class="cli-dot red"></span>
+                        <span class="cli-dot yellow"></span>
+                        <span class="cli-dot green"></span>
+                        <span class="cli-title">backmark@1.0.0 ~ zsh</span>
+                    </div>
+                    <div class="cli-body">
+                        <pre><code><span class="cli-prompt">$</span> backmark list --status todo
+
+<span class="cli-section">📋 To Do (4)</span>
+
+<span class="cli-task">→ #42</span> <strong>Implement AI planning assistant</strong>
+   <span class="cli-meta">Priority: high | Complexity: 8 | Due: 2025-11-10</span>
+   <span class="cli-tags">ai planning architecture</span>
+
+<span class="cli-task">→ #43</span> <strong>Add Markdown export feature</strong>
+   <span class="cli-meta">Priority: medium | Complexity: 5</span>
+   <span class="cli-tags">export markdown</span>
+
+<span class="cli-task">→ #44</span> <strong>Optimize LokiJS indexing</strong>
+   <span class="cli-meta">Priority: high | Complexity: 6</span>
+   <span class="cli-tags">performance database</span>
+
+<span class="cli-task">→ #45</span> <strong>Write documentation for AI spaces</strong>
+   <span class="cli-meta">Priority: medium | Complexity: 3</span>
+   <span class="cli-tags">docs ai</span>
+
+<span class="cli-stats">Performance: Query time: <span class="cli-highlight">8ms</span> | 1,247 tasks indexed</span>
+
+<span class="cli-prompt">$</span> <span class="cli-cursor">▋</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pourquoi BackMark ?</h2>
+                <p class="section-subtitle">Les outils actuels n'ont pas été conçus pour le développement assisté par IA</p>
+            </div>
+
+            <div class="ps-grid">
+                <div class="problem-box">
+                    <h3>❌ Le problème</h3>
+                    <ul class="problem-list">
+                        <li>Les task managers traditionnels (Jira, Linear, Notion) imposent leur UI et leur format propriétaire</li>
+                        <li>L'IA ne peut pas collaborer naturellement dans ces outils fermés</li>
+                        <li>Vos données sont enfermées dans des silos cloud</li>
+                        <li>Performance médiocre avec de gros projets (1000+ tâches)</li>
+                        <li>Complexité inutile pour des workflows de développement</li>
+                    </ul>
+                </div>
+
+                <div class="solution-box">
+                    <h3>✅ La solution BackMark</h3>
+                    <ul class="solution-list">
+                        <li><strong>100% Markdown + YAML</strong> - Format universel, éditable partout, versionnable avec Git</li>
+                        <li><strong>4 AI Spaces dédiés</strong> - Planning, Notes, Documentation, Review pour vos assistants IA</li>
+                        <li><strong>Zéro lock-in</strong> - Vos fichiers restent lisibles même sans BackMark</li>
+                        <li><strong>Ultra-rapide</strong> - Indexation LokiJS : 50-250x plus rapide que la concurrence</li>
+                        <li><strong>CLI-first</strong> - Workflow développeur, scriptable, automatisable</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-detailed">
+        <div class="container">
+            <h2>Fonctionnalités</h2>
+            <p class="section-subtitle">Tout ce dont vous avez besoin pour gérer vos tâches en collaboration avec l'IA</p>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Design centré sur l'IA</h3>
+                    <p>BackMark reconnaît l'IA comme un <strong>membre d'équipe de première classe</strong>. Quatre espaces dédiés permettent à vos assistants IA de collaborer naturellement :</p>
+                    <ul class="feature-list">
+                        <li><strong>AI Planning</strong> - L'IA décompose les tâches complexes</li>
+                        <li><strong>AI Notes</strong> - Capture d'insights pendant le coding</li>
+                        <li><strong>AI Documentation</strong> - Documentation technique générée</li>
+                        <li><strong>AI Review</strong> - Feedback et suggestions de code</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Zéro Lock-in</h3>
+                    <p>Vos tâches sont stockées en <strong>Markdown pur avec frontmatter YAML</strong>. Pas de format propriétaire, pas de base de données opaque :</p>
+                    <ul class="feature-list">
+                        <li>Lisible et éditable dans n'importe quel éditeur de texte</li>
+                        <li>Versionnable avec Git - historique complet de vos tâches</li>
+                        <li>Compatible avec tous les outils Markdown existants</li>
+                        <li>Migration facile vers/depuis n'importe quel système</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Performance extrême</h3>
+                    <p>Grâce à l'indexation <strong>LokiJS</strong>, BackMark offre des performances exceptionnelles :</p>
+                    <ul class="feature-list">
+                        <li><strong>50-250x plus rapide</strong> que les task managers traditionnels</li>
+                        <li>Gère <strong>1000+ tâches</strong> sans ralentissement</li>
+                        <li>Temps de réponse <strong>&lt; 10ms</strong> pour les requêtes</li>
+                        <li>Recherche floue instantanée sur tous les champs</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Interface CLI moderne</h3>
+                    <p>Une expérience CLI élégante et productive pour les développeurs :</p>
+                    <ul class="feature-list">
+                        <li>Affichage coloré et tableau Kanban interactif</li>
+                        <li>Recherche floue et filtres puissants</li>
+                        <li>Auto-complétion et invites intelligentes</li>
+                        <li>Export JSON, CSV, Markdown pour scripting</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Confidentialité totale</h3>
+                    <p>Vos données vous appartiennent. Point final.</p>
+                    <ul class="feature-list">
+                        <li><strong>100% offline</strong> - Aucune connexion cloud requise</li>
+                        <li><strong>Zéro télémétrie</strong> - Aucune collecte de données</li>
+                        <li>Pas de compte, pas d'authentification</li>
+                        <li>Contrôle total sur vos fichiers</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Automatisation IA</h3>
+                    <p>Laissez l'IA vous assister dans la gestion de vos tâches :</p>
+                    <ul class="feature-list">
+                        <li>Décomposition automatique de tâches complexes</li>
+                        <li>Estimation de complexité basée sur l'analyse du code</li>
+                        <li>Génération de documentation technique</li>
+                        <li>Validation de cohérence des tâches</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison">
+        <div class="container">
+            <h2>BackMark vs Autres Outils</h2>
+            <p class="section-subtitle">Pourquoi BackMark est différent des task managers traditionnels</p>
+
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Fonctionnalité</th>
+                            <th class="highlight-col">BackMark</th>
+                            <th>Linear / Jira</th>
+                            <th>Notion / Trello</th>
+                            <th>Plain Markdown</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Format des données</strong></td>
+                            <td class="highlight-col">✅ Markdown + YAML</td>
+                            <td>❌ Propriétaire</td>
+                            <td>❌ Propriétaire</td>
+                            <td>✅ Markdown</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI Collaboration</strong></td>
+                            <td class="highlight-col">✅ 4 AI spaces dédiés</td>
+                            <td>❌ Non prévu</td>
+                            <td>⚠️ Limité</td>
+                            <td>❌ Manuel</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Offline / Local</strong></td>
+                            <td class="highlight-col">✅ 100% offline</td>
+                            <td>❌ Cloud requis</td>
+                            <td>❌ Cloud requis</td>
+                            <td>✅ Local</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Performance (1000+ tâches)</strong></td>
+                            <td class="highlight-col">✅ &lt;10ms queries</td>
+                            <td>⚠️ Lent</td>
+                            <td>⚠️ Très lent</td>
+                            <td>❌ Pas de search</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Git Integration</strong></td>
+                            <td class="highlight-col">✅ Natif</td>
+                            <td>⚠️ Export seulement</td>
+                            <td>❌ Non</td>
+                            <td>✅ Natif</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CLI / Scriptable</strong></td>
+                            <td class="highlight-col">✅ CLI-first</td>
+                            <td>⚠️ API seulement</td>
+                            <td>⚠️ API limitée</td>
+                            <td>❌ Aucun</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Coût</strong></td>
+                            <td class="highlight-col">✅ Gratuit & Open Source</td>
+                            <td>💰 $8-15/utilisateur/mois</td>
+                            <td>💰 $5-20/utilisateur/mois</td>
+                            <td>✅ Gratuit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Confidentialité</strong></td>
+                            <td class="highlight-col">✅ Zéro télémétrie</td>
+                            <td>❌ Collecte données</td>
+                            <td>❌ Collecte données</td>
+                            <td>✅ Total</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section class="getting-started">
+        <div class="container">
+            <h2>Démarrer avec BackMark</h2>
+            <p class="section-subtitle">Installation et utilisation en 3 étapes</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Installation</h3>
+                    <div class="code-block">
+                        <pre><code># Via npm (recommandé)
+npm install -g backmark
+
+# Via yarn
+yarn global add backmark
+
+# Via pnpm
+pnpm add -g backmark</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Initialisation</h3>
+                    <div class="code-block">
+                        <pre><code># Initialiser un nouveau projet
+backmark init
+
+# Créer votre première tâche
+backmark add "Implement user authentication"
+
+# Voir vos tâches
+backmark list</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Collaboration IA</h3>
+                    <div class="code-block">
+                        <pre><code># L'IA décompose la tâche
+backmark ai-plan 42
+
+# L'IA génère la documentation
+backmark ai-docs 42
+
+# Review avec l'IA
+backmark ai-review 42</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="docs-cta">
+                <p>📚 Consultez la <strong>documentation complète</strong> sur backmark.tech pour explorer toutes les fonctionnalités</p>
+                <div class="docs-buttons">
+                    <a href="https://backmark.tech" target="_blank" rel="noopener" class="btn btn-primary">
+                        Documentation complète →
+                    </a>
+                    <a href="https://github.com/Grazulex/backmark" target="_blank" rel="noopener" class="btn btn-secondary">
+                        Repository GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box-large">
+                <h2>Prêt à transformer votre workflow ?</h2>
+                <p>Rejoignez les développeurs qui ont adopté le vibe coding avec BackMark</p>
+                <div class="cta-buttons">
+                    <a href="https://backmark.tech" target="_blank" rel="noopener" class="btn btn-primary-large">
+                        Découvrir sur backmark.tech →
+                    </a>
+                    <a href="https://github.com/Grazulex/backmark" target="_blank" rel="noopener" class="btn btn-secondary-large">
+                        <span class="btn-icon">⭐</span> Star sur GitHub
+                    </a>
+                </div>
+                <p class="cta-note">Open Source • MIT License • Gratuit pour toujours</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Creator Section -->
+    <section class="creator-section">
+        <div class="container">
+            <div class="creator-content">
+                <div class="creator-text">
+                    <h3>À propos du créateur</h3>
+                    <p>
+                        BackMark est développé par <strong>Jean-Marc Strauven</strong>, Expert Laravel avec 15+ ans d'expérience
+                        et créateur de 17+ packages open-source téléchargés 6,000+ fois.
+                    </p>
+                    <p>
+                        Passionné par les outils qui améliorent la productivité des développeurs, Jean-Marc combine son expertise
+                        en architecture logicielle et son intérêt pour l'IA pour créer des solutions innovantes.
+                    </p>
+                    <div class="creator-links">
+                        <a href="index.html" class="btn btn-secondary">Voir mon portfolio</a>
+                        <a href="index.html#services" class="btn btn-secondary">Mes services</a>
+                    </div>
+                </div>
+                <div class="creator-stats">
+                    <div class="creator-stat">
+                        <span class="stat-icon">📦</span>
+                        <strong>17+ packages</strong>
+                        <span>Open source</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">⬇️</span>
+                        <strong>6,000+</strong>
+                        <span>Downloads</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">⭐</span>
+                        <strong>100+</strong>
+                        <span>GitHub Stars</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">💼</span>
+                        <strong>15+ ans</strong>
+                        <span>Expérience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>BackMark</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://backmark.tech" target="_blank" rel="noopener">Site officiel</a></li>
+                        <li><a href="https://github.com/Grazulex/backmark" target="_blank" rel="noopener">GitHub Repository</a></li>
+                        <li><a href="mailto:info@backmark.tech">info@backmark.tech</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Portfolio</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#packages">Packages Laravel</a></li>
+                        <li><a href="index.html#services">Services & Consulting</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Autres Projets</h4>
+                    <ul class="footer-links">
+                        <li><a href="reposentinel.html">RepoSentinel</a></li>
+                        <li><a href="index.html#packages">Tous mes packages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:jms@grazulex.be">jms@grazulex.be</a></li>
+                        <li><a href="https://github.com/Grazulex" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/jean-marc-strauven/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jean-Marc Strauven • BackMark</p>
+                <p class="footer-tagline">Built with ❤️ for developers who vibe with AI</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
