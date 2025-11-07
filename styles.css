@@ -1984,34 +1984,40 @@ footer {
     border-top: 1px solid var(--border-color);
 }
 
-/* Mobile Menu Toggle */
+/* Mobile Menu Toggle - Hidden by default on desktop */
 .mobile-menu-toggle {
-    display: none;
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-size: 1.5rem;
-    transition: all 0.2s ease;
-    color: var(--text-primary);
-    position: relative;
-    z-index: 1000;
+    display: none !important;
 }
 
-.mobile-menu-toggle:hover {
-    background: var(--bg-secondary);
-    transform: scale(1.05);
-}
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block !important;
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-size: 1.5rem;
+        transition: all 0.2s ease;
+        color: var(--text-primary);
+        position: relative;
+        z-index: 1000;
+    }
 
-.mobile-menu-toggle:active {
-    transform: scale(0.95);
-}
+    .mobile-menu-toggle:hover {
+        background: var(--bg-secondary);
+        transform: scale(1.05);
+    }
 
-.hamburger-icon {
-    display: inline-block;
-    line-height: 1;
-    pointer-events: none;
+    .mobile-menu-toggle:active {
+        transform: scale(0.95);
+    }
+
+    .hamburger-icon {
+        display: inline-block;
+        line-height: 1;
+        pointer-events: none;
+    }
 }
 
 /* Responsive Design */
@@ -2079,13 +2085,6 @@ footer {
     }
 
     /* Mobile menu styles */
-    .mobile-menu-toggle {
-        display: block;
-        order: 2;
-        z-index: 1000;
-        position: relative;
-    }
-
     header .container {
         position: relative;
         display: flex;
@@ -2097,6 +2096,10 @@ footer {
     .logo {
         order: 1;
         z-index: 1000;
+    }
+
+    .mobile-menu-toggle {
+        order: 2;
     }
 
     .theme-toggle {
