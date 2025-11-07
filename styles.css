@@ -109,9 +109,10 @@ header {
     background-color: var(--bg-primary);
     border-bottom: 1px solid var(--border-color);
     padding: 1rem 0;
-    z-index: 100;
+    z-index: 1000;
     backdrop-filter: blur(10px);
     background-color: rgba(13, 17, 23, 0.95);
+    isolation: isolate;
 }
 
 body:not(.dark-mode) header {
@@ -122,6 +123,8 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 1001;
 }
 
 .logo {
@@ -1991,7 +1994,9 @@ footer {
 
 @media (max-width: 768px) {
     .mobile-menu-toggle {
-        display: block !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
         background: var(--bg-tertiary);
         border: 1px solid var(--border-color);
         border-radius: 8px;
@@ -2001,22 +2006,28 @@ footer {
         transition: all 0.2s ease;
         color: var(--text-primary);
         position: relative;
-        z-index: 1000;
+        z-index: 10000;
+        min-width: 44px;
+        min-height: 44px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .mobile-menu-toggle:hover {
         background: var(--bg-secondary);
-        transform: scale(1.05);
     }
 
     .mobile-menu-toggle:active {
         transform: scale(0.95);
+        background: var(--accent);
+        color: white;
     }
 
     .hamburger-icon {
-        display: inline-block;
+        display: block;
         line-height: 1;
         pointer-events: none;
+        user-select: none;
     }
 }
 
@@ -2095,18 +2106,21 @@ footer {
 
     .logo {
         order: 1;
-        z-index: 1000;
+        z-index: 10001;
+        position: relative;
     }
 
     .mobile-menu-toggle {
         order: 2;
+        flex-shrink: 0;
     }
 
     .theme-toggle {
         order: 3;
         margin-left: 1rem;
-        z-index: 1000;
+        z-index: 10001;
         position: relative;
+        flex-shrink: 0;
     }
 
     .main-nav {
@@ -2122,13 +2136,15 @@ footer {
         padding: 1rem 0;
         box-shadow: var(--shadow-lg);
         display: none;
-        z-index: 999;
+        z-index: 9999;
         order: 4;
         width: 100%;
+        pointer-events: none;
     }
 
     .main-nav.active {
         display: flex;
+        pointer-events: auto;
     }
 
     .nav-link {
