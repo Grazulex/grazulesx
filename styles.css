@@ -2074,10 +2074,25 @@ footer {
     /* Mobile menu styles */
     .mobile-menu-toggle {
         display: block;
+        order: 2;
+        z-index: 101;
     }
 
     header .container {
         position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .theme-toggle {
+        order: 3;
+        margin-left: 1rem;
+        z-index: 101;
     }
 
     .main-nav {
@@ -2095,7 +2110,8 @@ footer {
         border-radius: 0 0 8px 8px;
         box-shadow: var(--shadow-lg);
         display: none;
-        z-index: 99;
+        z-index: 100;
+        order: 4;
     }
 
     .main-nav.active {
@@ -2121,13 +2137,6 @@ footer {
         text-align: center;
         width: calc(100% - 4rem);
         border-bottom: none;
-    }
-
-    .theme-toggle {
-        position: absolute;
-        right: 2rem;
-        top: 50%;
-        transform: translateY(-50%);
     }
 
     .backmark-content {
