@@ -949,7 +949,9 @@ footer {
 }
 
 /* BackMark Page Styles */
-.backmark-page {
+.backmark-page,
+body.backmark-page,
+body.dark-mode.backmark-page {
     --accent: #00D4AA;
     --accent-hover: #00A8CC;
 }
@@ -1139,7 +1141,9 @@ footer {
 }
 
 /* RepoSentinel Page Styles */
-.reposentinel-page {
+.reposentinel-page,
+body.reposentinel-page,
+body.dark-mode.reposentinel-page {
     --accent: #7C3AED;
     --accent-hover: #A855F7;
 }
