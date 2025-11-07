@@ -1995,6 +1995,8 @@ footer {
     font-size: 1.5rem;
     transition: all 0.2s ease;
     color: var(--text-primary);
+    position: relative;
+    z-index: 1000;
 }
 
 .mobile-menu-toggle:hover {
@@ -2002,9 +2004,14 @@ footer {
     transform: scale(1.05);
 }
 
+.mobile-menu-toggle:active {
+    transform: scale(0.95);
+}
+
 .hamburger-icon {
     display: inline-block;
     line-height: 1;
+    pointer-events: none;
 }
 
 /* Responsive Design */
@@ -2075,7 +2082,8 @@ footer {
     .mobile-menu-toggle {
         display: block;
         order: 2;
-        z-index: 101;
+        z-index: 1000;
+        position: relative;
     }
 
     header .container {
@@ -2083,35 +2091,37 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     .logo {
         order: 1;
+        z-index: 1000;
     }
 
     .theme-toggle {
         order: 3;
         margin-left: 1rem;
-        z-index: 101;
+        z-index: 1000;
+        position: relative;
     }
 
     .main-nav {
         position: absolute;
-        top: 100%;
+        top: calc(100% + 1rem);
         left: 0;
         right: 0;
         background: var(--bg-primary);
         border: 1px solid var(--border-color);
-        border-top: none;
+        border-radius: 8px;
         flex-direction: column;
         gap: 0;
         padding: 1rem 0;
-        margin-top: 1rem;
-        border-radius: 0 0 8px 8px;
         box-shadow: var(--shadow-lg);
         display: none;
-        z-index: 100;
+        z-index: 999;
         order: 4;
+        width: 100%;
     }
 
     .main-nav.active {
