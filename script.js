@@ -2,6 +2,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
 
     // Check for saved theme preference or default to dark mode
     const savedTheme = localStorage.getItem('theme');
@@ -29,6 +31,40 @@ document.addEventListener('DOMContentLoaded', () => {
             themeToggle.style.transform = 'rotate(0deg)';
         }, 300);
     });
+
+    // Mobile menu toggle
+    if (mobileMenuToggle && mainNav) {
+        mobileMenuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+
+            // Change hamburger icon when menu is open
+            const hamburgerIcon = mobileMenuToggle.querySelector('.hamburger-icon');
+            if (mainNav.classList.contains('active')) {
+                hamburgerIcon.textContent = '✕';
+            } else {
+                hamburgerIcon.textContent = '☰';
+            }
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = mainNav.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                const hamburgerIcon = mobileMenuToggle.querySelector('.hamburger-icon');
+                hamburgerIcon.textContent = '☰';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                mainNav.classList.remove('active');
+                const hamburgerIcon = mobileMenuToggle.querySelector('.hamburger-icon');
+                hamburgerIcon.textContent = '☰';
+            }
+        });
+    }
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

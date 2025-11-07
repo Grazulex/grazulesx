@@ -1984,6 +1984,29 @@ footer {
     border-top: 1px solid var(--border-color);
 }
 
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.2s ease;
+    color: var(--text-primary);
+}
+
+.mobile-menu-toggle:hover {
+    background: var(--bg-secondary);
+    transform: scale(1.05);
+}
+
+.hamburger-icon {
+    display: inline-block;
+    line-height: 1;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -2048,9 +2071,63 @@ footer {
         min-width: auto;
     }
 
-    /* BackMark responsive */
+    /* Mobile menu styles */
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    header .container {
+        position: relative;
+    }
+
     .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        border-top: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        margin-top: 1rem;
+        border-radius: 0 0 8px 8px;
+        box-shadow: var(--shadow-lg);
         display: none;
+        z-index: 99;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .nav-link {
+        padding: 0.75rem 2rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .main-nav .btn-primary-small {
+        margin: 0.75rem 2rem;
+        display: block;
+        text-align: center;
+        width: calc(100% - 4rem);
+        border-bottom: none;
+    }
+
+    .theme-toggle {
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .backmark-content {
