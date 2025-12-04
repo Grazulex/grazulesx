@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShipMark - Git Release Management Made Easy. CLI pour gérer versions, changelogs et releases Git. Zero dependencies, full control.">
+    <meta name="keywords" content="ShipMark, Git, Release Management, CLI, Versioning, Changelog, Semantic Versioning, Developer Tools, DevOps">
+    <meta name="author" content="Jean-Marc Strauven">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ShipMark - Git Release Management Made Easy">
+    <meta property="og:description" content="Beautiful CLI pour gérer releases Git, changelogs et versioning. Zero dependencies, contrôle total.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grazulex.be/shipmark">
+    <meta property="og:image" content="https://grazulex.be/og-image.png">
+    <meta property="og:locale" content="fr_BE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ShipMark - Git Release Management Made Easy">
+    <meta name="twitter:description" content="CLI pour gérer releases Git avec génération automatique de changelog">
+    <meta name="twitter:image" content="https://grazulex.be/og-image.png">
+    <meta name="twitter:creator" content="@Grazulex">
+
+    <!-- SEO -->
+    <link rel="canonical" href="https://grazulex.be/shipmark">
+    <meta name="theme-color" content="#2563EB">
+    <meta name="robots" content="index, follow">
+
+    <title>ShipMark - Git Release Management Made Easy | Jean-Marc Strauven</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QKT4YLQB7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7QKT4YLQB7');
+    </script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ShipMark",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Linux, macOS, Windows",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Jean-Marc Strauven",
+            "url": "https://grazulex.be"
+        },
+        "description": "Beautiful CLI pour gérer releases Git, changelogs et versioning. Zero dependencies, contrôle total.",
+        "screenshot": "https://shipmark.tech/screenshot.png",
+        "softwareVersion": "1.0.0",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "ratingCount": "1"
+        }
+    }
+    </script>
+</head>
+<body class="dark-mode shipmark-page">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">grazulex</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger-icon">☰</span>
+            </button>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Portfolio</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="backmark.html" class="nav-link">BackMark</a>
+                <a href="reposentinel.html" class="nav-link">RepoSentinel</a>
+                <a href="https://shipmark.tech" target="_blank" rel="noopener" class="btn btn-primary-small">Aller sur shipmark.tech →</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="shipmark-hero">
+        <div class="container">
+            <div class="shipmark-hero-content">
+                <div class="hero-badge">
+                    <span>🚀 Open Source</span>
+                </div>
+                <h1>ShipMark</h1>
+                <p class="hero-tagline">Git Release Management <strong>Made Easy</strong></p>
+                <p class="hero-description">
+                    Beautiful CLI pour gérer vos releases Git, changelogs et versioning. Workflow interactif intuitif,
+                    génération automatique de changelog avec Conventional Commits, et mode CI/CD non-interactif. Zéro dépendance externe.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="https://shipmark.tech" target="_blank" rel="noopener" class="btn btn-primary">
+                        Découvrir sur shipmark.tech →
+                    </a>
+                    <a href="https://github.com/Grazulex/shipmark" target="_blank" rel="noopener" class="btn btn-secondary">
+                        <span class="btn-icon">🐙</span> Voir sur GitHub
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">⚡</span>
+                        <div>
+                            <strong>Zero Deps</strong>
+                            <span>Git natif seulement</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🎯</span>
+                        <div>
+                            <strong>Interactive</strong>
+                            <span>Workflow guidé</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">📝</span>
+                        <div>
+                            <strong>Auto Changelog</strong>
+                            <span>Conventional Commits</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🤖</span>
+                        <div>
+                            <strong>CI/CD Ready</strong>
+                            <span>Mode non-interactif</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CLI Demo Window -->
+            <div class="cli-demo-large">
+                <div class="cli-window">
+                    <div class="cli-header">
+                        <span class="cli-dot red"></span>
+                        <span class="cli-dot yellow"></span>
+                        <span class="cli-dot green"></span>
+                        <span class="cli-title">shipmark@1.0.0 ~ zsh</span>
+                    </div>
+                    <div class="cli-body">
+                        <pre><code><span class="cli-prompt">$</span> npx @grazulex/shipmark
+
+<span class="cli-section">🚀 ShipMark - Git Release Manager</span>
+
+<span class="cli-task">→</span> Current version: <span class="cli-highlight">1.2.4</span>
+<span class="cli-task">→</span> Select version type:
+
+  <span class="cli-task-active">▶</span> patch (1.2.5) - Bug fixes
+    minor (1.3.0) - New features
+    major (2.0.0) - Breaking changes
+    prerelease - Beta/RC versions
+
+<span class="cli-section">📝 Analyzing commits...</span>
+
+<span class="cli-stats">Found <span class="cli-highlight">12 commits</span> since last release</span>
+  <span class="cli-task">→</span> 8 fixes
+  <span class="cli-task">→</span> 3 features
+  <span class="cli-task">→</span> 1 breaking change
+
+<span class="cli-section">✅ Release v1.2.5 created successfully!</span>
+
+<span class="cli-prompt">$</span> <span class="cli-cursor">▋</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pourquoi ShipMark ?</h2>
+                <p class="section-subtitle">Simplifiez votre workflow de release</p>
+            </div>
+
+            <div class="ps-grid">
+                <div class="problem-box">
+                    <h3>❌ Le problème</h3>
+                    <ul class="problem-list">
+                        <li>Gérer les releases Git manuellement est fastidieux et source d'erreurs</li>
+                        <li>Générer des changelogs cohérents prend du temps</li>
+                        <li>Le semantic versioning requiert des décisions manuelles</li>
+                        <li>Les outils existants ont trop de dépendances et de complexité</li>
+                        <li>Difficile d'automatiser les releases dans CI/CD</li>
+                    </ul>
+                </div>
+
+                <div class="solution-box">
+                    <h3>✅ La solution ShipMark</h3>
+                    <ul class="solution-list">
+                        <li><strong>Workflow interactif</strong> - Prompts guidés pour sélectionner le type de version</li>
+                        <li><strong>Changelog automatique</strong> - Parsing de Conventional Commits pour générer les changelogs</li>
+                        <li><strong>Semantic versioning</strong> - Support complet (major, minor, patch, prerelease)</li>
+                        <li><strong>Zero dependencies</strong> - Fonctionne uniquement avec Git natif</li>
+                        <li><strong>CI/CD-ready</strong> - Mode non-interactif avec détection automatique</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-detailed">
+        <div class="container">
+            <h2>Fonctionnalités</h2>
+            <p class="section-subtitle">Tout ce dont vous avez besoin pour gérer vos releases Git</p>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Workflow Interactif</h3>
+                    <p>ShipMark vous guide à travers le processus de release avec des <strong>prompts interactifs intelligents</strong> :</p>
+                    <ul class="feature-list">
+                        <li>Détection automatique de la version actuelle</li>
+                        <li>Suggestions de version basées sur les commits</li>
+                        <li>Preview du changelog avant la création</li>
+                        <li>Confirmation avant chaque action importante</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Changelog Automatique</h3>
+                    <p>Génération intelligente de changelog en analysant vos <strong>Conventional Commits</strong> :</p>
+                    <ul class="feature-list">
+                        <li>Parsing automatique de feat:, fix:, docs:, etc.</li>
+                        <li>Catégorisation par type de changement</li>
+                        <li>Détection des breaking changes (BREAKING CHANGE:)</li>
+                        <li>Format Markdown propre et lisible</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔢</div>
+                    <h3>Semantic Versioning</h3>
+                    <p>Support complet du <strong>semantic versioning</strong> (semver) :</p>
+                    <ul class="feature-list">
+                        <li><strong>Major</strong> (2.0.0) - Breaking changes</li>
+                        <li><strong>Minor</strong> (1.3.0) - Nouvelles fonctionnalités</li>
+                        <li><strong>Patch</strong> (1.2.5) - Bug fixes</li>
+                        <li><strong>Prerelease</strong> (1.2.5-beta.1) - Beta/RC</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Zero Dependencies</h3>
+                    <p>ShipMark ne dépend que de <strong>Git natif</strong> :</p>
+                    <ul class="feature-list">
+                        <li>Aucune dépendance npm externe</li>
+                        <li>Installation ultra-rapide</li>
+                        <li>Pas de conflit de versions</li>
+                        <li>Taille minimale du package</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>CI/CD Ready</h3>
+                    <p>Mode non-interactif parfait pour l'automatisation :</p>
+                    <ul class="feature-list">
+                        <li>Détection automatique du type de version</li>
+                        <li>Pas de prompts en mode CI/CD</li>
+                        <li>Variables d'environnement pour configuration</li>
+                        <li>Codes de sortie standards pour scripting</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Interface Moderne</h3>
+                    <p>Une expérience CLI élégante et intuitive :</p>
+                    <ul class="feature-list">
+                        <li>Affichage coloré et formaté</li>
+                        <li>Indicateurs visuels de progression</li>
+                        <li>Messages d'erreur clairs et utiles</li>
+                        <li>Documentation intégrée (--help)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison">
+        <div class="container">
+            <h2>ShipMark vs Autres Outils</h2>
+            <p class="section-subtitle">Pourquoi ShipMark se démarque</p>
+
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Fonctionnalité</th>
+                            <th class="highlight-col">ShipMark</th>
+                            <th>semantic-release</th>
+                            <th>standard-version</th>
+                            <th>release-it</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Dépendances</strong></td>
+                            <td class="highlight-col">✅ Zero (Git uniquement)</td>
+                            <td>❌ 50+ packages</td>
+                            <td>❌ 30+ packages</td>
+                            <td>❌ 20+ packages</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Workflow interactif</strong></td>
+                            <td class="highlight-col">✅ Prompts guidés</td>
+                            <td>❌ Automatique seulement</td>
+                            <td>⚠️ Limité</td>
+                            <td>✅ Oui</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CI/CD Mode</strong></td>
+                            <td class="highlight-col">✅ Non-interactif</td>
+                            <td>✅ Oui</td>
+                            <td>✅ Oui</td>
+                            <td>✅ Oui</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Changelog auto</strong></td>
+                            <td class="highlight-col">✅ Conventional Commits</td>
+                            <td>✅ Oui</td>
+                            <td>✅ Oui</td>
+                            <td>⚠️ Plugin requis</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Configuration requise</strong></td>
+                            <td class="highlight-col">✅ Zero config</td>
+                            <td>❌ Complexe</td>
+                            <td>⚠️ Minimale</td>
+                            <td>⚠️ Recommandée</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Installation</strong></td>
+                            <td class="highlight-col">✅ Instantanée</td>
+                            <td>⚠️ Lente (beaucoup de deps)</td>
+                            <td>⚠️ Moyenne</td>
+                            <td>⚠️ Moyenne</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Courbe d'apprentissage</strong></td>
+                            <td class="highlight-col">✅ Intuitive</td>
+                            <td>❌ Complexe</td>
+                            <td>⚠️ Modérée</td>
+                            <td>⚠️ Modérée</td>
+                        </tr>
+                        <tr>
+                            <td><strong>License</strong></td>
+                            <td class="highlight-col">✅ MIT</td>
+                            <td>✅ MIT</td>
+                            <td>✅ ISC</td>
+                            <td>✅ MIT</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section class="getting-started">
+        <div class="container">
+            <h2>Démarrer avec ShipMark</h2>
+            <p class="section-subtitle">Installation et utilisation en 3 étapes</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Installation</h3>
+                    <div class="code-block">
+                        <pre><code># Via npm (recommandé)
+npm install -g @grazulex/shipmark
+
+# Via yarn
+yarn global add @grazulex/shipmark
+
+# Via pnpm
+pnpm add -g @grazulex/shipmark
+
+# Ou utilisez npx (sans installation)
+npx @grazulex/shipmark</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Créer une release</h3>
+                    <div class="code-block">
+                        <pre><code># Mode interactif (recommandé)
+shipmark
+
+# Ou spécifiez le type directement
+shipmark patch   # 1.2.5 -> 1.2.6
+shipmark minor   # 1.2.5 -> 1.3.0
+shipmark major   # 1.2.5 -> 2.0.0
+shipmark prerelease  # 1.2.5 -> 1.2.6-beta.1</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Automatiser en CI/CD</h3>
+                    <div class="code-block">
+                        <pre><code># GitHub Actions example
+- name: Create Release
+  run: |
+    npx @grazulex/shipmark --ci
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+# Mode automatique détecte le type
+# basé sur les Conventional Commits</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="docs-cta">
+                <p>📚 Consultez la <strong>documentation complète</strong> sur shipmark.tech pour explorer toutes les fonctionnalités</p>
+                <div class="docs-buttons">
+                    <a href="https://shipmark.tech" target="_blank" rel="noopener" class="btn btn-primary">
+                        Documentation complète →
+                    </a>
+                    <a href="https://github.com/Grazulex/shipmark" target="_blank" rel="noopener" class="btn btn-secondary">
+                        Repository GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box-large">
+                <h2>Prêt à simplifier vos releases ?</h2>
+                <p>Rejoignez les développeurs qui ont adopté ShipMark pour leurs workflows Git</p>
+                <div class="cta-buttons">
+                    <a href="https://shipmark.tech" target="_blank" rel="noopener" class="btn btn-primary-large">
+                        Découvrir sur shipmark.tech →
+                    </a>
+                    <a href="https://github.com/Grazulex/shipmark" target="_blank" rel="noopener" class="btn btn-secondary-large">
+                        <span class="btn-icon">⭐</span> Star sur GitHub
+                    </a>
+                </div>
+                <p class="cta-note">Open Source • MIT License • Gratuit pour toujours</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Creator Section -->
+    <section class="creator-section">
+        <div class="container">
+            <div class="creator-content">
+                <div class="creator-text">
+                    <h3>À propos du créateur</h3>
+                    <p>
+                        ShipMark est développé par <strong>Jean-Marc Strauven</strong>, Expert Laravel avec 15+ ans d'expérience
+                        et créateur de 17+ packages open-source téléchargés 6,000+ fois.
+                    </p>
+                    <p>
+                        Passionné par les outils qui améliorent la productivité des développeurs, Jean-Marc crée des solutions
+                        élégantes qui résolvent des problèmes réels. ShipMark est né du besoin de simplifier les releases Git
+                        sans la complexité des outils existants.
+                    </p>
+                    <div class="creator-links">
+                        <a href="index.html" class="btn btn-secondary">Voir mon portfolio</a>
+                        <a href="index.html#services" class="btn btn-secondary">Mes services</a>
+                    </div>
+                </div>
+                <div class="creator-stats">
+                    <div class="creator-stat">
+                        <span class="stat-icon">📦</span>
+                        <strong>17+ packages</strong>
+                        <span>Open source</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">⬇️</span>
+                        <strong>6,000+</strong>
+                        <span>Downloads</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">⭐</span>
+                        <strong>100+</strong>
+                        <span>GitHub Stars</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">💼</span>
+                        <strong>15+ ans</strong>
+                        <span>Expérience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>ShipMark</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://shipmark.tech" target="_blank" rel="noopener">Site officiel</a></li>
+                        <li><a href="https://github.com/Grazulex/shipmark" target="_blank" rel="noopener">GitHub Repository</a></li>
+                        <li><a href="https://www.npmjs.com/package/@grazulex/shipmark" target="_blank" rel="noopener">npm Package</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Portfolio</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#packages">Packages Laravel</a></li>
+                        <li><a href="index.html#services">Services & Consulting</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Autres Projets</h4>
+                    <ul class="footer-links">
+                        <li><a href="backmark.html">BackMark</a></li>
+                        <li><a href="reposentinel.html">RepoSentinel</a></li>
+                        <li><a href="index.html#packages">Tous mes packages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:jms@grazulex.be">jms@grazulex.be</a></li>
+                        <li><a href="https://github.com/Grazulex" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/jean-marc-strauven/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jean-Marc Strauven • ShipMark</p>
+                <p class="footer-tagline">Git Release Management Made Easy</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
