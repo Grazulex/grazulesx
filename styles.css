@@ -1470,7 +1470,8 @@ body.dark-mode.reposentinel-page {
     margin-bottom: 2.5rem;
 }
 
-.backmark-hero .hero-stats {
+.backmark-hero .hero-stats,
+.shipmark-hero .hero-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
@@ -1505,17 +1506,23 @@ body.dark-mode.reposentinel-page {
     flex-direction: column;
     gap: 0.25rem;
     text-align: left;
+    min-width: 0;
+    flex: 1;
 }
 
 .stat-item strong {
     font-size: 1.5rem;
     color: var(--accent);
     font-family: 'Courier New', monospace;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .stat-item span {
     font-size: 0.875rem;
     color: var(--text-secondary);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .cli-demo-large {
@@ -2209,7 +2216,8 @@ body.dark-mode.reposentinel-page {
         font-size: 1.25rem;
     }
 
-    .backmark-hero .hero-stats {
+    .backmark-hero .hero-stats,
+    .shipmark-hero .hero-stats {
         grid-template-columns: repeat(2, 1fr);
     }
 
