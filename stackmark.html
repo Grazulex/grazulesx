@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StackMark - Gestion Docker simplifiée pour développeurs. CLI pour orchestrer vos stacks Docker en local avec allocation automatique des ports et templates prédéfinis.">
+    <meta name="keywords" content="StackMark, Docker, CLI, Container Management, Laravel, Symfony, Node.js, WordPress, Developer Tools, DevOps">
+    <meta name="author" content="Jean-Marc Strauven">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="StackMark - Gestion Docker simplifiée">
+    <meta property="og:description" content="CLI élégante pour orchestrer vos stacks Docker en local. Zero conflits de ports, templates prédéfinis, dashboard temps réel.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grazulex.be/stackmark">
+    <meta property="og:image" content="https://grazulex.be/og-image.png">
+    <meta property="og:locale" content="fr_BE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="StackMark - Gestion Docker simplifiée">
+    <meta name="twitter:description" content="CLI pour gérer vos stacks Docker en local avec allocation automatique des ports">
+    <meta name="twitter:image" content="https://grazulex.be/og-image.png">
+    <meta name="twitter:creator" content="@Grazulex">
+
+    <!-- SEO -->
+    <link rel="canonical" href="https://grazulex.be/stackmark">
+    <meta name="theme-color" content="#F59E0B">
+    <meta name="robots" content="index, follow">
+
+    <title>StackMark - Gestion Docker simplifiée | Jean-Marc Strauven</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QKT4YLQB7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7QKT4YLQB7');
+    </script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "StackMark",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Linux, macOS, Windows",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Jean-Marc Strauven",
+            "url": "https://grazulex.be"
+        },
+        "description": "CLI élégante pour orchestrer vos stacks Docker en local. Zero conflits de ports, templates prédéfinis, dashboard temps réel.",
+        "softwareVersion": "1.0.0",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "ratingCount": "1"
+        }
+    }
+    </script>
+</head>
+<body class="dark-mode stackmark-page">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">grazulex</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger-icon">☰</span>
+            </button>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Portfolio</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="backmark.html" class="nav-link">BackMark</a>
+                <a href="reposentinel.html" class="nav-link">RepoSentinel</a>
+                <a href="shipmark.html" class="nav-link">ShipMark</a>
+                <a href="https://stackmark.tech" target="_blank" rel="noopener" class="btn btn-primary-small">Aller sur stackmark.tech →</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="stackmark-hero">
+        <div class="container">
+            <div class="stackmark-hero-content">
+                <div class="hero-badge">
+                    <span>🐳 Open Source</span>
+                </div>
+                <h1>StackMark</h1>
+                <p class="hero-tagline">Gestion Docker <strong>simplifiée</strong></p>
+                <p class="hero-description">
+                    CLI élégante pour orchestrer vos stacks Docker en local. Allocation automatique des ports,
+                    templates prédéfinis pour Laravel, Symfony, Node.js, WordPress, et tableau de bord interactif en temps réel.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="https://stackmark.tech" target="_blank" rel="noopener" class="btn btn-primary">
+                        Découvrir sur stackmark.tech →
+                    </a>
+                    <a href="https://github.com/Grazulex/stackmark" target="_blank" rel="noopener" class="btn btn-secondary">
+                        <span class="btn-icon">🐙</span> Voir sur GitHub
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">🔌</span>
+                        <div>
+                            <strong>Zero Conflits</strong>
+                            <span>Ports automatiques</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">📊</span>
+                        <div>
+                            <strong>Dashboard</strong>
+                            <span>Temps réel</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🎯</span>
+                        <div>
+                            <strong>5 Templates</strong>
+                            <span>Prêts à l'emploi</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🌐</span>
+                        <div>
+                            <strong>Domaines</strong>
+                            <span>Locaux auto</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CLI Demo Window -->
+            <div class="cli-demo-large">
+                <div class="cli-window">
+                    <div class="cli-header">
+                        <span class="cli-dot red"></span>
+                        <span class="cli-dot yellow"></span>
+                        <span class="cli-dot green"></span>
+                        <span class="cli-title">stackmark@1.0.0 ~ zsh</span>
+                    </div>
+                    <div class="cli-body">
+                        <pre><code><span class="cli-prompt">$</span> npx @grazulex/stackmark dashboard
+
+<span class="cli-section">🐳 StackMark - Docker Stack Manager</span>
+
+<span class="cli-task">→</span> Active Stacks: <span class="cli-highlight">3</span>
+<span class="cli-task">→</span> Total Containers: <span class="cli-highlight">12</span>
+
+<span class="cli-task-active">▶</span> laravel-app      <span class="cli-highlight">Running</span>   :8080  laravel-app.local
+  <span class="cli-meta">├─ php-fpm       Up 2h    CPU: 3%   Mem: 256MB</span>
+  <span class="cli-meta">├─ nginx         Up 2h    CPU: 1%   Mem: 64MB</span>
+  <span class="cli-meta">└─ mysql         Up 2h    CPU: 2%   Mem: 512MB</span>
+
+<span class="cli-task-active">▶</span> symfony-api      <span class="cli-highlight">Running</span>   :8081  api.local
+  <span class="cli-meta">├─ php-fpm       Up 1h    CPU: 5%   Mem: 320MB</span>
+  <span class="cli-meta">└─ postgres      Up 1h    CPU: 1%   Mem: 256MB</span>
+
+<span class="cli-section">📊 System Resources</span>
+<span class="cli-stats">CPU: <span class="cli-highlight">12%</span> | Memory: <span class="cli-highlight">2.4GB/16GB</span> | Disk: <span class="cli-highlight">8.2GB</span></span>
+
+<span class="cli-prompt">$</span> <span class="cli-cursor">▋</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pourquoi StackMark ?</h2>
+                <p class="section-subtitle">Simplifiez votre environnement de développement Docker</p>
+            </div>
+
+            <div class="ps-grid">
+                <div class="problem-box">
+                    <h3>❌ Le problème</h3>
+                    <ul class="problem-list">
+                        <li>Conflits de ports entre projets Docker (port 80 déjà utilisé...)</li>
+                        <li>Écrire des docker-compose.yml répétitifs pour chaque projet</li>
+                        <li>Pas de visibilité sur les containers en cours d'exécution</li>
+                        <li>Gestion manuelle des domaines locaux dans /etc/hosts</li>
+                        <li>Difficile de switcher rapidement entre plusieurs projets</li>
+                    </ul>
+                </div>
+
+                <div class="solution-box">
+                    <h3>✅ La solution StackMark</h3>
+                    <ul class="solution-list">
+                        <li><strong>Allocation automatique</strong> - Plus jamais de conflits de ports</li>
+                        <li><strong>Templates prédéfinis</strong> - Laravel, Symfony, Node.js, WordPress en un clic</li>
+                        <li><strong>Dashboard interactif</strong> - Vue en temps réel de tous vos containers</li>
+                        <li><strong>Domaines automatiques</strong> - myproject.local configuré automatiquement</li>
+                        <li><strong>Switch rapide</strong> - Démarrez/arrêtez des stacks en une commande</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-detailed">
+        <div class="container">
+            <h2>Fonctionnalités</h2>
+            <p class="section-subtitle">Tout ce dont vous avez besoin pour gérer vos stacks Docker</p>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3>Allocation Automatique des Ports</h3>
+                    <p>Fini les conflits de ports ! StackMark détecte automatiquement les ports disponibles :</p>
+                    <ul class="feature-list">
+                        <li>Scan des ports utilisés sur votre machine</li>
+                        <li>Attribution intelligente des ports libres</li>
+                        <li>Mapping automatique entre containers</li>
+                        <li>Configuration persistante par projet</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Dashboard Interactif</h3>
+                    <p>Visualisez et contrôlez tous vos containers depuis le terminal :</p>
+                    <ul class="feature-list">
+                        <li>Actualisation en temps réel</li>
+                        <li>Métriques CPU, mémoire, réseau</li>
+                        <li>Logs intégrés par container</li>
+                        <li>Actions rapides (start, stop, restart)</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Templates Prédéfinis</h3>
+                    <p>Démarrez un nouveau projet en quelques secondes avec nos templates :</p>
+                    <ul class="feature-list">
+                        <li><strong>Laravel</strong> - PHP-FPM, Nginx, MySQL, Redis</li>
+                        <li><strong>Symfony</strong> - PHP-FPM, Nginx, PostgreSQL</li>
+                        <li><strong>Node.js</strong> - Node, MongoDB, Redis</li>
+                        <li><strong>WordPress</strong> - Apache, MySQL, phpMyAdmin</li>
+                        <li><strong>Custom</strong> - Créez vos propres templates</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Domaines Locaux</h3>
+                    <p>Accédez à vos projets via des URLs propres :</p>
+                    <ul class="feature-list">
+                        <li>Configuration automatique de /etc/hosts</li>
+                        <li>Support des sous-domaines</li>
+                        <li>HTTPS local avec certificats auto-signés</li>
+                        <li>Nettoyage automatique à l'arrêt</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Détection Intelligente</h3>
+                    <p>StackMark comprend vos projets automatiquement :</p>
+                    <ul class="feature-list">
+                        <li>Détection du framework (Laravel, Symfony...)</li>
+                        <li>Lecture des docker-compose existants</li>
+                        <li>Suggestions de configuration optimale</li>
+                        <li>Import de projets existants</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Interface Moderne</h3>
+                    <p>Une expérience CLI élégante et intuitive :</p>
+                    <ul class="feature-list">
+                        <li>Interface colorée et formatée</li>
+                        <li>Indicateurs visuels clairs</li>
+                        <li>Autocomplétion des commandes</li>
+                        <li>Messages d'erreur utiles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison">
+        <div class="container">
+            <h2>StackMark vs Autres Solutions</h2>
+            <p class="section-subtitle">Pourquoi StackMark se démarque</p>
+
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Fonctionnalité</th>
+                            <th class="highlight-col">StackMark</th>
+                            <th>Docker Desktop</th>
+                            <th>Portainer</th>
+                            <th>Laravel Sail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Allocation ports auto</strong></td>
+                            <td class="highlight-col">✅ Intelligente</td>
+                            <td>❌ Manuelle</td>
+                            <td>❌ Manuelle</td>
+                            <td>⚠️ Configurable</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CLI-first</strong></td>
+                            <td class="highlight-col">✅ 100% CLI</td>
+                            <td>❌ GUI only</td>
+                            <td>❌ Web UI</td>
+                            <td>✅ Oui</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multi-framework</strong></td>
+                            <td class="highlight-col">✅ Laravel, Symfony, Node...</td>
+                            <td>✅ Tous</td>
+                            <td>✅ Tous</td>
+                            <td>❌ Laravel only</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Domaines locaux auto</strong></td>
+                            <td class="highlight-col">✅ /etc/hosts auto</td>
+                            <td>❌ Non</td>
+                            <td>❌ Non</td>
+                            <td>❌ Non</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dashboard temps réel</strong></td>
+                            <td class="highlight-col">✅ Terminal interactif</td>
+                            <td>✅ GUI</td>
+                            <td>✅ Web</td>
+                            <td>❌ Non</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ressources système</strong></td>
+                            <td class="highlight-col">✅ Ultra-léger</td>
+                            <td>❌ Lourd (2GB+ RAM)</td>
+                            <td>⚠️ Container additionnel</td>
+                            <td>✅ Léger</td>
+                        </tr>
+                        <tr>
+                            <td><strong>License</strong></td>
+                            <td class="highlight-col">✅ MIT</td>
+                            <td>⚠️ Freemium</td>
+                            <td>⚠️ CE/BE</td>
+                            <td>✅ MIT</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section class="getting-started">
+        <div class="container">
+            <h2>Démarrer avec StackMark</h2>
+            <p class="section-subtitle">Installation et utilisation en 3 étapes</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Installation</h3>
+                    <div class="code-block">
+                        <pre><code># Via npm (recommandé)
+npm install -g @grazulex/stackmark
+
+# Via yarn
+yarn global add @grazulex/stackmark
+
+# Via pnpm
+pnpm add -g @grazulex/stackmark
+
+# Ou utilisez npx (sans installation)
+npx @grazulex/stackmark</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Créer une stack</h3>
+                    <div class="code-block">
+                        <pre><code># Créer une stack Laravel
+stackmark create my-laravel-app --template laravel
+
+# Créer une stack Symfony
+stackmark create my-api --template symfony
+
+# Créer une stack Node.js
+stackmark create my-node-app --template nodejs
+
+# Stack personnalisée
+stackmark create my-app --template custom</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Gérer vos stacks</h3>
+                    <div class="code-block">
+                        <pre><code># Démarrer une stack
+stackmark start my-laravel-app
+
+# Voir le dashboard
+stackmark dashboard
+
+# Arrêter une stack
+stackmark stop my-laravel-app
+
+# Lister toutes les stacks
+stackmark list</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="docs-cta">
+                <p>📚 Consultez la <strong>documentation complète</strong> sur stackmark.tech pour explorer toutes les fonctionnalités</p>
+                <div class="docs-buttons">
+                    <a href="https://stackmark.tech" target="_blank" rel="noopener" class="btn btn-primary">
+                        Documentation complète →
+                    </a>
+                    <a href="https://github.com/Grazulex/stackmark" target="_blank" rel="noopener" class="btn btn-secondary">
+                        Repository GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box-large">
+                <h2>Prêt à simplifier votre workflow Docker ?</h2>
+                <p>Rejoignez les développeurs qui ont adopté StackMark pour leurs environnements locaux</p>
+                <div class="cta-buttons">
+                    <a href="https://stackmark.tech" target="_blank" rel="noopener" class="btn btn-primary-large">
+                        Découvrir sur stackmark.tech →
+                    </a>
+                    <a href="https://github.com/Grazulex/stackmark" target="_blank" rel="noopener" class="btn btn-secondary-large">
+                        <span class="btn-icon">⭐</span> Star sur GitHub
+                    </a>
+                </div>
+                <p class="cta-note">Open Source • MIT License • Gratuit pour toujours</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Creator Section -->
+    <section class="creator-section">
+        <div class="container">
+            <div class="creator-content">
+                <div class="creator-text">
+                    <h3>À propos du créateur</h3>
+                    <p>
+                        StackMark est développé par <strong>Jean-Marc Strauven</strong>, Expert Laravel avec 15+ ans d'expérience
+                        et créateur de 17+ packages open-source téléchargés 6,000+ fois.
+                    </p>
+                    <p>
+                        Passionné par les outils qui améliorent la productivité des développeurs, Jean-Marc crée des solutions
+                        élégantes qui résolvent des problèmes réels. StackMark est né de la frustration de gérer manuellement
+                        les environnements Docker pour chaque projet.
+                    </p>
+                    <div class="creator-links">
+                        <a href="index.html" class="btn btn-secondary">Voir mon portfolio</a>
+                        <a href="index.html#services" class="btn btn-secondary">Mes services</a>
+                    </div>
+                </div>
+                <div class="creator-stats">
+                    <div class="creator-stat">
+                        <span class="stat-icon">📦</span>
+                        <strong>17+ packages</strong>
+                        <span>Open source</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">⬇️</span>
+                        <strong>6,000+</strong>
+                        <span>Downloads</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">⭐</span>
+                        <strong>100+</strong>
+                        <span>GitHub Stars</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">💼</span>
+                        <strong>15+ ans</strong>
+                        <span>Expérience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>StackMark</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://stackmark.tech" target="_blank" rel="noopener">Site officiel</a></li>
+                        <li><a href="https://github.com/Grazulex/stackmark" target="_blank" rel="noopener">GitHub Repository</a></li>
+                        <li><a href="https://www.npmjs.com/package/@grazulex/stackmark" target="_blank" rel="noopener">npm Package</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Portfolio</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#packages">Packages Laravel</a></li>
+                        <li><a href="index.html#services">Services & Consulting</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Autres Projets</h4>
+                    <ul class="footer-links">
+                        <li><a href="backmark.html">BackMark</a></li>
+                        <li><a href="reposentinel.html">RepoSentinel</a></li>
+                        <li><a href="shipmark.html">ShipMark</a></li>
+                        <li><a href="index.html#packages">Tous mes packages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:jms@grazulex.be">jms@grazulex.be</a></li>
+                        <li><a href="https://github.com/Grazulex" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/jean-marc-strauven/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jean-Marc Strauven • StackMark</p>
+                <p class="footer-tagline">Gestion Docker simplifiée pour développeurs</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

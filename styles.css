@@ -956,6 +956,57 @@ body.dark-mode.backmark-page {
     --accent-hover: #00A8CC;
 }
 
+/* ShipMark Featured Section */
+.shipmark-featured {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.shipmark-badge {
+    background: var(--accent);
+}
+
+.shipmark-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.shipmark-text h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+}
+
+.shipmark-tagline {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.shipmark-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.shipmark-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.shipmark-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
 /* RepoSentinel Featured Section */
 .reposentinel-featured {
     background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
@@ -1146,6 +1197,121 @@ body.reposentinel-page,
 body.dark-mode.reposentinel-page {
     --accent: #7C3AED;
     --accent-hover: #A855F7;
+}
+
+/* StackMark Featured Section */
+.stackmark-featured {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stackmark-badge {
+    background: #F59E0B;
+}
+
+.stackmark-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.stackmark-text h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stackmark-tagline {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.stackmark-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.stackmark-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stackmark-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* StackMark Page Styles */
+.stackmark-page,
+body.stackmark-page,
+body.dark-mode.stackmark-page {
+    --accent: #F59E0B;
+    --accent-hover: #D97706;
+}
+
+.stackmark-hero {
+    padding: 8rem 0 6rem;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    text-align: center;
+}
+
+.stackmark-hero-content {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+}
+
+.stackmark-hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stackmark-hero .hero-tagline {
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.stackmark-hero .hero-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+
+.stackmark-hero .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+/* StackMark highlight hover color */
+.stackmark-featured .highlight-item:hover,
+.stackmark-page .highlight-item:hover {
+    border-color: #F59E0B;
+}
+
+/* StackMark comparison table highlight */
+.stackmark-page .comparison-table .highlight-col {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(217, 119, 6, 0.1) 100%);
 }
 
 .reposentinel-hero {
@@ -2257,6 +2423,24 @@ body.dark-mode.reposentinel-page {
         gap: 2rem;
     }
 
+    /* ShipMark responsive */
+    .shipmark-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .shipmark-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .shipmark-text h2 {
+        font-size: 2rem;
+    }
+
+    .shipmark-tagline {
+        font-size: 1.25rem;
+    }
+
     /* RepoSentinel responsive */
     .reposentinel-content {
         grid-template-columns: 1fr;
@@ -2273,6 +2457,36 @@ body.dark-mode.reposentinel-page {
 
     .reposentinel-tagline {
         font-size: 1.25rem;
+    }
+
+    /* StackMark responsive */
+    .stackmark-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .stackmark-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .stackmark-text h2 {
+        font-size: 2rem;
+    }
+
+    .stackmark-tagline {
+        font-size: 1.25rem;
+    }
+
+    .stackmark-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .stackmark-hero .hero-tagline {
+        font-size: 1.25rem;
+    }
+
+    .stackmark-hero .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .dashboard-body {
@@ -2367,6 +2581,15 @@ body.dark-mode.reposentinel-page {
     }
 
     .reposentinel-hero .hero-stats {
+        grid-template-columns: 1fr;
+    }
+
+    /* StackMark mobile */
+    .stackmark-hero h1 {
+        font-size: 2rem;
+    }
+
+    .stackmark-hero .hero-stats {
         grid-template-columns: 1fr;
     }
 
