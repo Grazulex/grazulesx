@@ -1261,6 +1261,140 @@ body.dark-mode.stackmark-page {
     --accent-hover: #D97706;
 }
 
+/* EnvMark Featured Section */
+.envmark-featured {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.envmark-badge {
+    background: #10B981;
+}
+
+.envmark-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.envmark-text h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.envmark-tagline {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.envmark-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.envmark-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.envmark-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* EnvMark highlight hover color */
+.envmark-featured .highlight-item:hover {
+    border-color: #10B981;
+}
+
+/* EnvMark Page Styles */
+.envmark-page,
+body.envmark-page,
+body.dark-mode.envmark-page {
+    --accent: #10B981;
+    --accent-hover: #059669;
+}
+
+/* ContextMark Featured Section */
+.contextmark-featured {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contextmark-badge {
+    background: #8B5CF6;
+}
+
+.contextmark-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.contextmark-text h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contextmark-tagline {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.contextmark-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.contextmark-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.contextmark-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ContextMark highlight hover color */
+.contextmark-featured .highlight-item:hover {
+    border-color: #8B5CF6;
+}
+
+/* ContextMark Page Styles */
+.contextmark-page,
+body.contextmark-page,
+body.dark-mode.contextmark-page {
+    --accent: #8B5CF6;
+    --accent-hover: #7C3AED;
+}
+
 .stackmark-hero {
     padding: 8rem 0 6rem;
     background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
@@ -2474,6 +2608,42 @@ body.dark-mode.stackmark-page {
     }
 
     .stackmark-tagline {
+        font-size: 1.25rem;
+    }
+
+    /* EnvMark responsive */
+    .envmark-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .envmark-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .envmark-text h2 {
+        font-size: 2rem;
+    }
+
+    .envmark-tagline {
+        font-size: 1.25rem;
+    }
+
+    /* ContextMark responsive */
+    .contextmark-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contextmark-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .contextmark-text h2 {
+        font-size: 2rem;
+    }
+
+    .contextmark-tagline {
         font-size: 1.25rem;
     }
 

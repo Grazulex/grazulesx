@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EnvMark - Gestion securisee des variables d'environnement. Stockez vos fichiers .env dans un repository Git avec chiffrement AES-256-GCM optionnel.">
+    <meta name="keywords" content="EnvMark, environment variables, .env, Git, AES-256, encryption, secrets management, DevOps, security">
+    <meta name="author" content="Jean-Marc Strauven">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="EnvMark - Secure Environment Variable Management">
+    <meta property="og:description" content="Gerez vos fichiers .env via un repository Git dedie avec chiffrement AES-256-GCM optionnel. Partagez en equipe de maniere securisee.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grazulex.be/envmark">
+    <meta property="og:image" content="https://grazulex.be/og-image.png">
+    <meta property="og:locale" content="fr_BE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EnvMark - Secure Environment Variable Management">
+    <meta name="twitter:description" content="Gerez vos .env via Git avec chiffrement AES-256. Partage securise en equipe.">
+    <meta name="twitter:image" content="https://grazulex.be/og-image.png">
+    <meta name="twitter:creator" content="@Grazulex">
+
+    <!-- SEO -->
+    <link rel="canonical" href="https://grazulex.be/envmark">
+    <meta name="theme-color" content="#10B981">
+    <meta name="robots" content="index, follow">
+
+    <title>EnvMark - Secure Environment Variable Management | Jean-Marc Strauven</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QKT4YLQB7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7QKT4YLQB7');
+    </script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "EnvMark",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Linux, macOS, Windows",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Jean-Marc Strauven",
+            "url": "https://grazulex.be"
+        },
+        "description": "Gestion securisee des variables d'environnement via Git avec chiffrement AES-256-GCM optionnel.",
+        "softwareVersion": "1.0.0"
+    }
+    </script>
+</head>
+<body class="dark-mode envmark-page">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">grazulex</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger-icon">&#9776;</span>
+            </button>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Portfolio</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="backmark.html" class="nav-link">BackMark</a>
+                <a href="shipmark.html" class="nav-link">ShipMark</a>
+                <a href="stackmark.html" class="nav-link">StackMark</a>
+                <a href="contextmark.html" class="nav-link">ContextMark</a>
+                <a href="https://envmark.tech" target="_blank" rel="noopener" class="btn btn-primary-small">Aller sur envmark.tech</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="sun-icon">&#9728;&#65039;</span>
+                <span class="moon-icon">&#127769;</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="backmark-hero">
+        <div class="container">
+            <div class="backmark-hero-content">
+                <div class="hero-badge">
+                    <span>&#128274; Open Source</span>
+                </div>
+                <h1>EnvMark</h1>
+                <p class="hero-tagline">Secure <strong>Environment Variable</strong> Management</p>
+                <p class="hero-description">
+                    Gerez vos fichiers .env via un repository Git dedie avec chiffrement AES-256-GCM optionnel.
+                    Partagez vos variables d'environnement en equipe de maniere securisee, avec historique complet et rollback.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="https://envmark.tech" target="_blank" rel="noopener" class="btn btn-primary">
+                        Decouvrir sur envmark.tech
+                    </a>
+                    <a href="https://github.com/Grazulex/envmark" target="_blank" rel="noopener" class="btn btn-secondary">
+                        <span class="btn-icon">&#128025;</span> Voir sur GitHub
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">&#128274;</span>
+                        <div>
+                            <strong>AES-256-GCM</strong>
+                            <span>Chiffrement</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">&#128194;</span>
+                        <div>
+                            <strong>Git-natif</strong>
+                            <span>Historique complet</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">&#128260;</span>
+                        <div>
+                            <strong>Rollback</strong>
+                            <span>Toute version</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">&#128101;</span>
+                        <div>
+                            <strong>Multi-projets</strong>
+                            <span>Un seul repo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CLI Demo Window -->
+            <div class="cli-demo-large">
+                <div class="cli-window">
+                    <div class="cli-header">
+                        <span class="cli-dot red"></span>
+                        <span class="cli-dot yellow"></span>
+                        <span class="cli-dot green"></span>
+                        <span class="cli-title">envmark@1.0.0 ~ zsh</span>
+                    </div>
+                    <div class="cli-body">
+                        <pre><code><span class="cli-prompt">$</span> envmark pull prod
+
+<span class="cli-section">&#128274; EnvMark - Secure Env Manager</span>
+
+<span class="cli-task">&#8594;</span> Fetching from <span class="cli-highlight">production</span> branch...
+<span class="cli-task">&#8594;</span> Decrypting secrets with AES-256-GCM...
+<span class="cli-task-active">&#10003;</span> 24 variables loaded
+
+<span class="cli-section">&#128203; Variables</span>
+<span class="cli-meta">APP_ENV=</span><span class="cli-highlight">production</span>
+<span class="cli-meta">DB_HOST=</span><span class="cli-highlight">db.example.com</span>
+<span class="cli-meta">API_KEY=</span><span class="cli-highlight">&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;</span>
+<span class="cli-meta">REDIS_URL=</span><span class="cli-highlight">redis://...</span>
+
+<span class="cli-stats">&#10003; Synced <span class="cli-highlight">.env</span> | Encrypted with project key</span>
+
+<span class="cli-prompt">$</span> <span class="cli-cursor">&#9608;</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pourquoi EnvMark ?</h2>
+                <p class="section-subtitle">Gerez vos secrets de maniere securisee et professionnelle</p>
+            </div>
+
+            <div class="ps-grid">
+                <div class="problem-box">
+                    <h3>&#10060; Le probleme</h3>
+                    <ul class="problem-list">
+                        <li>Fichiers .env partages par email, Slack, ou pire... commites dans le repo</li>
+                        <li>Pas d'historique des changements de configuration</li>
+                        <li>Difficile de synchroniser les .env entre developpeurs</li>
+                        <li>Aucune difference visible entre environnements (dev, staging, prod)</li>
+                        <li>Rollback impossible en cas de mauvaise configuration</li>
+                    </ul>
+                </div>
+
+                <div class="solution-box">
+                    <h3>&#10003; La solution EnvMark</h3>
+                    <ul class="solution-list">
+                        <li><strong>Repository Git dedie</strong> - Historique complet, versionne</li>
+                        <li><strong>Chiffrement AES-256</strong> - Secrets proteges cote client</li>
+                        <li><strong>Branches = Environnements</strong> - dev, staging, prod separes</li>
+                        <li><strong>Diff entre envs</strong> - Comparez avant deploiement</li>
+                        <li><strong>Rollback en 1 commande</strong> - Revenez a n'importe quelle version</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-detailed">
+        <div class="container">
+            <h2>Fonctionnalites</h2>
+            <p class="section-subtitle">Tout ce dont vous avez besoin pour gerer vos variables d'environnement</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#128274;</div>
+                    <h3>Chiffrement AES-256-GCM</h3>
+                    <p>Protection de vos secrets avec un chiffrement de niveau militaire :</p>
+                    <ul class="feature-list">
+                        <li>Cle 256-bit unique par projet</li>
+                        <li>IV aleatoire pour chaque chiffrement</li>
+                        <li>Tag d'authentification 128-bit</li>
+                        <li>Stockage securise des cles localement</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">&#128194;</div>
+                    <h3>Stockage Git-natif</h3>
+                    <p>Utilisez Git comme backend pour vos configurations :</p>
+                    <ul class="feature-list">
+                        <li>Historique complet de chaque changement</li>
+                        <li>Branches pour les environnements</li>
+                        <li>Compatible GitHub, GitLab, Bitbucket</li>
+                        <li>Diffs entre versions</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">&#128260;</div>
+                    <h3>Rollback Facile</h3>
+                    <p>Revenez a n'importe quelle version en cas de probleme :</p>
+                    <ul class="feature-list">
+                        <li>Historique consultable</li>
+                        <li>Rollback par nombre de versions</li>
+                        <li>Rollback par commit specifique</li>
+                        <li>Mode local pour tester avant push</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">&#128101;</div>
+                    <h3>Multi-projets</h3>
+                    <p>Gerez tous vos projets depuis un seul repository :</p>
+                    <ul class="feature-list">
+                        <li>Un dossier par projet</li>
+                        <li>Configuration locale par projet</li>
+                        <li>Cles de chiffrement separees</li>
+                        <li>Acces granulaire par equipe</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section class="getting-started">
+        <div class="container">
+            <h2>Demarrer avec EnvMark</h2>
+            <p class="section-subtitle">Installation et utilisation en 3 etapes</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Installation</h3>
+                    <div class="code-block">
+                        <pre><code># Via npm (recommande)
+npm install -g @grazulex/envmark
+
+# Ou utilisez npx
+npx @grazulex/envmark</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Configuration</h3>
+                    <div class="code-block">
+                        <pre><code># Configuration globale
+envmark init --global
+
+# Configuration projet
+cd my-project
+envmark init --local</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Utilisation</h3>
+                    <div class="code-block">
+                        <pre><code># Recuperer les variables
+envmark pull dev
+
+# Sauvegarder les changements
+envmark push dev -m "Add API key"
+
+# Comparer environnements
+envmark diff dev prod</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="docs-cta">
+                <p>&#128218; Consultez la <strong>documentation complete</strong> sur envmark.tech</p>
+                <div class="docs-buttons">
+                    <a href="https://envmark.tech" target="_blank" rel="noopener" class="btn btn-primary">
+                        Documentation complete
+                    </a>
+                    <a href="https://github.com/Grazulex/envmark" target="_blank" rel="noopener" class="btn btn-secondary">
+                        Repository GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box-large">
+                <h2>Pret a securiser vos variables d'environnement ?</h2>
+                <p>Rejoignez les developpeurs qui ont adopte EnvMark pour gerer leurs secrets</p>
+                <div class="cta-buttons">
+                    <a href="https://envmark.tech" target="_blank" rel="noopener" class="btn btn-primary-large">
+                        Decouvrir sur envmark.tech
+                    </a>
+                    <a href="https://github.com/Grazulex/envmark" target="_blank" rel="noopener" class="btn btn-secondary-large">
+                        <span class="btn-icon">&#11088;</span> Star sur GitHub
+                    </a>
+                </div>
+                <p class="cta-note">Open Source - MIT License - Gratuit pour toujours</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Creator Section -->
+    <section class="creator-section">
+        <div class="container">
+            <div class="creator-content">
+                <div class="creator-text">
+                    <h3>A propos du createur</h3>
+                    <p>
+                        EnvMark est developpe par <strong>Jean-Marc Strauven</strong>, Expert Laravel avec 25+ ans d'experience
+                        et createur de 20+ packages open-source telecharges 11,000+ fois.
+                    </p>
+                    <p>
+                        Passionne par les outils qui ameliorent la productivite des developpeurs, Jean-Marc cree des solutions
+                        elegantes qui resolvent des problemes reels. EnvMark est ne de la frustration de partager des .env
+                        de maniere non securisee.
+                    </p>
+                    <div class="creator-links">
+                        <a href="index.html" class="btn btn-secondary">Voir mon portfolio</a>
+                        <a href="index.html#services" class="btn btn-secondary">Mes services</a>
+                    </div>
+                </div>
+                <div class="creator-stats">
+                    <div class="creator-stat">
+                        <span class="stat-icon">&#128230;</span>
+                        <strong>20+ packages</strong>
+                        <span>Open source</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">&#11015;&#65039;</span>
+                        <strong>11,000+</strong>
+                        <span>Downloads</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">&#11088;</span>
+                        <strong>545+</strong>
+                        <span>GitHub Stars</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">&#128188;</span>
+                        <strong>25+ ans</strong>
+                        <span>Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>EnvMark</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://envmark.tech" target="_blank" rel="noopener">Site officiel</a></li>
+                        <li><a href="https://github.com/Grazulex/envmark" target="_blank" rel="noopener">GitHub Repository</a></li>
+                        <li><a href="https://www.npmjs.com/package/@grazulex/envmark" target="_blank" rel="noopener">npm Package</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Portfolio</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#packages">Packages Laravel</a></li>
+                        <li><a href="index.html#services">Services & Consulting</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Autres Projets</h4>
+                    <ul class="footer-links">
+                        <li><a href="backmark.html">BackMark</a></li>
+                        <li><a href="shipmark.html">ShipMark</a></li>
+                        <li><a href="stackmark.html">StackMark</a></li>
+                        <li><a href="contextmark.html">ContextMark</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:jms@grazulex.be">jms@grazulex.be</a></li>
+                        <li><a href="https://github.com/Grazulex" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/jean-marc-strauven/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jean-Marc Strauven - EnvMark</p>
+                <p class="footer-tagline">Secure Environment Variable Management</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

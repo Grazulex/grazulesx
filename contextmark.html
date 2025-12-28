@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ContextMark - Stop copying CLAUDE.md. Start composing it. Centralisez, versionnez et synchronisez vos contextes Claude Code.">
+    <meta name="keywords" content="ContextMark, Claude Code, CLAUDE.md, AI context, context management, Claude, Anthropic, developer tools">
+    <meta name="author" content="Jean-Marc Strauven">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ContextMark - Claude Context Management">
+    <meta property="og:description" content="Stop copying CLAUDE.md. Start composing it. Centralisez et synchronisez vos contextes Claude Code.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grazulex.be/contextmark">
+    <meta property="og:image" content="https://grazulex.be/og-image.png">
+    <meta property="og:locale" content="fr_BE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ContextMark - Claude Context Management">
+    <meta name="twitter:description" content="Stop copying CLAUDE.md. Start composing it.">
+    <meta name="twitter:image" content="https://grazulex.be/og-image.png">
+    <meta name="twitter:creator" content="@Grazulex">
+
+    <!-- SEO -->
+    <link rel="canonical" href="https://grazulex.be/contextmark">
+    <meta name="theme-color" content="#8B5CF6">
+    <meta name="robots" content="index, follow">
+
+    <title>ContextMark - Claude Context Management | Jean-Marc Strauven</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QKT4YLQB7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7QKT4YLQB7');
+    </script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ContextMark",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Linux, macOS, Windows",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Jean-Marc Strauven",
+            "url": "https://grazulex.be"
+        },
+        "description": "Centralisez, versionnez et synchronisez vos contextes Claude Code a travers projets et machines.",
+        "softwareVersion": "1.0.0"
+    }
+    </script>
+</head>
+<body class="dark-mode contextmark-page">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">grazulex</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger-icon">&#9776;</span>
+            </button>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Portfolio</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="backmark.html" class="nav-link">BackMark</a>
+                <a href="shipmark.html" class="nav-link">ShipMark</a>
+                <a href="stackmark.html" class="nav-link">StackMark</a>
+                <a href="envmark.html" class="nav-link">EnvMark</a>
+                <a href="https://contextmark.tech" target="_blank" rel="noopener" class="btn btn-primary-small">Aller sur contextmark.tech</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="sun-icon">&#9728;&#65039;</span>
+                <span class="moon-icon">&#127769;</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="backmark-hero">
+        <div class="container">
+            <div class="backmark-hero-content">
+                <div class="hero-badge">
+                    <span>&#128218; Open Source</span>
+                </div>
+                <h1>ContextMark</h1>
+                <p class="hero-tagline">Stop copying <strong>CLAUDE.md</strong>. Start composing it.</p>
+                <p class="hero-description">
+                    Centralisez, versionnez et synchronisez vos contextes Claude Code a travers projets et machines.
+                    Composez des CLAUDE.md modulaires a partir de blocs reutilisables.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="https://contextmark.tech" target="_blank" rel="noopener" class="btn btn-primary">
+                        Decouvrir sur contextmark.tech
+                    </a>
+                    <a href="https://github.com/Grazulex/contextmark" target="_blank" rel="noopener" class="btn btn-secondary">
+                        <span class="btn-icon">&#128025;</span> Voir sur GitHub
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">&#129521;</span>
+                        <div>
+                            <strong>Blocs</strong>
+                            <span>Modulaires</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">&#127919;</span>
+                        <div>
+                            <strong>Profils</strong>
+                            <span>Par projet</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">&#128260;</span>
+                        <div>
+                            <strong>Sync</strong>
+                            <span>Multi-machines</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">&#129302;</span>
+                        <div>
+                            <strong>Agents</strong>
+                            <span>Reutilisables</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CLI Demo Window -->
+            <div class="cli-demo-large">
+                <div class="cli-window">
+                    <div class="cli-header">
+                        <span class="cli-dot red"></span>
+                        <span class="cli-dot yellow"></span>
+                        <span class="cli-dot green"></span>
+                        <span class="cli-title">contextmark@1.0.0 ~ zsh</span>
+                    </div>
+                    <div class="cli-body">
+                        <pre><code><span class="cli-prompt">$</span> contextmark init --profile laravel-package
+
+<span class="cli-section">&#128218; ContextMark - Claude Context Manager</span>
+
+<span class="cli-task">&#8594;</span> Loading profile: <span class="cli-highlight">laravel-package</span>
+<span class="cli-task">&#8594;</span> Composing blocks:
+   <span class="cli-meta">&#9500;&#9472;</span> laravel/base <span class="cli-highlight">v1.2.0</span>
+   <span class="cli-meta">&#9500;&#9472;</span> laravel/testing <span class="cli-highlight">v1.0.0</span>
+   <span class="cli-meta">&#9500;&#9472;</span> style/code <span class="cli-highlight">v2.0.0</span>
+   <span class="cli-meta">&#9492;&#9472;</span> tools/git <span class="cli-highlight">v1.1.0</span>
+
+<span class="cli-task">&#8594;</span> Adding agents:
+   <span class="cli-meta">&#9500;&#9472;</span> reviewer
+   <span class="cli-meta">&#9492;&#9472;</span> tester
+
+<span class="cli-task-active">&#10003;</span> CLAUDE.md generated successfully
+
+<span class="cli-stats">&#10003; 4 blocks | <span class="cli-highlight">2 agents</span> | Ready for Claude Code</span>
+
+<span class="cli-prompt">$</span> <span class="cli-cursor">&#9608;</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pourquoi ContextMark ?</h2>
+                <p class="section-subtitle">Gerez vos contextes Claude Code de maniere professionnelle</p>
+            </div>
+
+            <div class="ps-grid">
+                <div class="problem-box">
+                    <h3>&#10060; Le probleme</h3>
+                    <ul class="problem-list">
+                        <li>Copier-coller le meme CLAUDE.md entre projets similaires</li>
+                        <li>Pas de versioning des contextes Claude</li>
+                        <li>Difficile de partager les bonnes pratiques en equipe</li>
+                        <li>Contextes desynchronises entre machines</li>
+                        <li>Pas de reutilisation des agents et commandes</li>
+                    </ul>
+                </div>
+
+                <div class="solution-box">
+                    <h3>&#10003; La solution ContextMark</h3>
+                    <ul class="solution-list">
+                        <li><strong>Blocs modulaires</strong> - Contextes reutilisables et versionnes</li>
+                        <li><strong>Profils projets</strong> - Combinaisons de blocs predefinies</li>
+                        <li><strong>Synchronisation Git</strong> - Librairie partagee entre machines</li>
+                        <li><strong>Semantic versioning</strong> - Controlez les mises a jour</li>
+                        <li><strong>Agents & Commands</strong> - Skills reutilisables pour Claude</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-detailed">
+        <div class="container">
+            <h2>Fonctionnalites</h2>
+            <p class="section-subtitle">Tout ce dont vous avez besoin pour gerer vos contextes Claude</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#129521;</div>
+                    <h3>Blocs Modulaires</h3>
+                    <p>Creez des fragments de contexte reutilisables :</p>
+                    <ul class="feature-list">
+                        <li>Namespaces logiques (laravel/, style/, tools/)</li>
+                        <li>Frontmatter YAML avec metadonnees</li>
+                        <li>Semantic versioning par bloc</li>
+                        <li>Tags pour l'organisation</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">&#127919;</div>
+                    <h3>Profils Projets</h3>
+                    <p>Combinez des blocs pour differents types de projets :</p>
+                    <ul class="feature-list">
+                        <li>laravel-package, laravel-saas, cli-tool...</li>
+                        <li>Selection des blocs a inclure</li>
+                        <li>Agents et commandes par profil</li>
+                        <li>Profil par defaut configurable</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">&#128260;</div>
+                    <h3>Synchronisation</h3>
+                    <p>Partagez votre librairie entre machines :</p>
+                    <ul class="feature-list">
+                        <li>Backend Git (GitHub, GitLab...)</li>
+                        <li>Auto-pull au demarrage</li>
+                        <li>Push apres modifications</li>
+                        <li>Mise a jour de tous les projets</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">&#129302;</div>
+                    <h3>Agents & Commands</h3>
+                    <p>Skills reutilisables pour Claude Code :</p>
+                    <ul class="feature-list">
+                        <li>Agents personnalises (reviewer, tester...)</li>
+                        <li>Commandes slash reutilisables</li>
+                        <li>Ajout facile aux projets</li>
+                        <li>Versionnes avec la librairie</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section class="getting-started">
+        <div class="container">
+            <h2>Demarrer avec ContextMark</h2>
+            <p class="section-subtitle">Installation et utilisation en 3 etapes</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Installation</h3>
+                    <div class="code-block">
+                        <pre><code># Via npm (recommande)
+npm install -g @grazulex/contextmark
+
+# Initialiser la librairie
+contextmark init-library</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Creer des blocs</h3>
+                    <div class="code-block">
+                        <pre><code># Creer un bloc
+contextmark block create laravel/base
+
+# Editer le contenu
+contextmark block edit laravel/base
+
+# Creer un profil
+contextmark profile create laravel-package</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Initialiser un projet</h3>
+                    <div class="code-block">
+                        <pre><code># Initialiser avec profil
+cd my-project
+contextmark init --profile laravel-package
+
+# Verifier les mises a jour
+contextmark status
+
+# Mettre a jour CLAUDE.md
+contextmark update</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="docs-cta">
+                <p>&#128218; Consultez la <strong>documentation complete</strong> sur contextmark.tech</p>
+                <div class="docs-buttons">
+                    <a href="https://contextmark.tech" target="_blank" rel="noopener" class="btn btn-primary">
+                        Documentation complete
+                    </a>
+                    <a href="https://github.com/Grazulex/contextmark" target="_blank" rel="noopener" class="btn btn-secondary">
+                        Repository GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box-large">
+                <h2>Pret a professionnaliser vos contextes Claude ?</h2>
+                <p>Rejoignez les developpeurs qui ont adopte ContextMark pour leurs projets</p>
+                <div class="cta-buttons">
+                    <a href="https://contextmark.tech" target="_blank" rel="noopener" class="btn btn-primary-large">
+                        Decouvrir sur contextmark.tech
+                    </a>
+                    <a href="https://github.com/Grazulex/contextmark" target="_blank" rel="noopener" class="btn btn-secondary-large">
+                        <span class="btn-icon">&#11088;</span> Star sur GitHub
+                    </a>
+                </div>
+                <p class="cta-note">Open Source - MIT License - Gratuit pour toujours</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Creator Section -->
+    <section class="creator-section">
+        <div class="container">
+            <div class="creator-content">
+                <div class="creator-text">
+                    <h3>A propos du createur</h3>
+                    <p>
+                        ContextMark est developpe par <strong>Jean-Marc Strauven</strong>, Expert Laravel avec 25+ ans d'experience
+                        et createur de 20+ packages open-source telecharges 11,000+ fois.
+                    </p>
+                    <p>
+                        Passionne par les outils qui ameliorent la productivite des developpeurs, Jean-Marc cree des solutions
+                        elegantes qui resolvent des problemes reels. ContextMark est ne de la frustration de copier-coller
+                        des CLAUDE.md entre projets.
+                    </p>
+                    <div class="creator-links">
+                        <a href="index.html" class="btn btn-secondary">Voir mon portfolio</a>
+                        <a href="index.html#services" class="btn btn-secondary">Mes services</a>
+                    </div>
+                </div>
+                <div class="creator-stats">
+                    <div class="creator-stat">
+                        <span class="stat-icon">&#128230;</span>
+                        <strong>20+ packages</strong>
+                        <span>Open source</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">&#11015;&#65039;</span>
+                        <strong>11,000+</strong>
+                        <span>Downloads</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">&#11088;</span>
+                        <strong>545+</strong>
+                        <span>GitHub Stars</span>
+                    </div>
+                    <div class="creator-stat">
+                        <span class="stat-icon">&#128188;</span>
+                        <strong>25+ ans</strong>
+                        <span>Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>ContextMark</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://contextmark.tech" target="_blank" rel="noopener">Site officiel</a></li>
+                        <li><a href="https://github.com/Grazulex/contextmark" target="_blank" rel="noopener">GitHub Repository</a></li>
+                        <li><a href="https://www.npmjs.com/package/@grazulex/contextmark" target="_blank" rel="noopener">npm Package</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Portfolio</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#packages">Packages Laravel</a></li>
+                        <li><a href="index.html#services">Services & Consulting</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Autres Projets</h4>
+                    <ul class="footer-links">
+                        <li><a href="backmark.html">BackMark</a></li>
+                        <li><a href="shipmark.html">ShipMark</a></li>
+                        <li><a href="stackmark.html">StackMark</a></li>
+                        <li><a href="envmark.html">EnvMark</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:jms@grazulex.be">jms@grazulex.be</a></li>
+                        <li><a href="https://github.com/Grazulex" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/jean-marc-strauven/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jean-Marc Strauven - ContextMark</p>
+                <p class="footer-tagline">Stop copying CLAUDE.md. Start composing it.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
