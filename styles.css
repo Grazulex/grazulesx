@@ -2780,6 +2780,280 @@ body.dark-mode.contextmark-page {
     }
 }
 
+/* ─── Games Section ─────────────────────────────────────────────────────── */
+
+.games {
+    padding: 6rem 0;
+    background: var(--bg-secondary);
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.game-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
+}
+
+.game-icon-wrapper {
+    margin-bottom: 1.25rem;
+}
+
+.game-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.game-card h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.game-genre {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.game-ctas {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.btn-game {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-itch {
+    background: #fa5c5c;
+    color: #fff;
+    border: 1px solid #fa5c5c;
+}
+
+.btn-itch:hover {
+    background: #e04444;
+    border-color: #e04444;
+    transform: translateY(-1px);
+}
+
+.btn-play {
+    background: #01875f;
+    color: #fff;
+    border: 1px solid #01875f;
+}
+
+.btn-play:hover {
+    background: #016b4c;
+    border-color: #016b4c;
+    transform: translateY(-1px);
+}
+
+.more-games {
+    text-align: center;
+    padding: 2rem;
+    background: var(--card-bg);
+    border: 1px dashed var(--border-color);
+    border-radius: 12px;
+}
+
+.more-games p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.more-games-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ─── Privacy Policy Page ────────────────────────────────────────────────── */
+
+.privacy-hero {
+    padding: 6rem 0 3rem;
+    background: var(--bg-primary);
+    text-align: center;
+}
+
+.privacy-game-icons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.privacy-game-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.privacy-effective {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+}
+
+.privacy-content {
+    padding: 4rem 0 6rem;
+    background: var(--bg-secondary);
+}
+
+.privacy-body {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.privacy-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+}
+
+.privacy-section h2 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.privacy-section p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+}
+
+.privacy-section p:last-child {
+    margin-bottom: 0;
+}
+
+.privacy-section a {
+    color: var(--accent);
+}
+
+.privacy-section code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+    background: var(--code-bg);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    color: var(--accent);
+}
+
+.privacy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.privacy-table th {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    padding: 0.6rem 1rem;
+    text-align: left;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.privacy-table td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    vertical-align: top;
+}
+
+.privacy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.privacy-list li {
+    color: var(--text-secondary);
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.privacy-list li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.privacy-back {
+    text-align: center;
+    margin-top: 2rem;
+}
+
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
